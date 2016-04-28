@@ -26,10 +26,10 @@ public class BasvuruCaller extends Thread {
                 Basvuru_Fragment.rslt3=ex.toString();
             }
         }
-       // public String ReturnValue(){
-            // System.out.println("Dönen Değer:" + Second_Fragment.rslt);
-         //   return Second_Fragment.rslt;
-        //}
+        public String ReturnValue(){
+             System.out.println("Dönen Değer:" + Basvuru_Fragment.rslt3);
+           return Basvuru_Fragment.rslt3;
+        }
 
 
     }

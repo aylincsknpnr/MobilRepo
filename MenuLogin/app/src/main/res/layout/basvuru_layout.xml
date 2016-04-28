@@ -21,4 +21,14 @@
         android:layout_height="wrap_content"
         android:text="Getir" />
 
+    <GridView
+        android:id="@+id/gridView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="10" >
+    </GridView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/GridShow"/>
 </LinearLayout>
