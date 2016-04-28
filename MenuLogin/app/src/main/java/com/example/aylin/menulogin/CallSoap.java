@@ -67,18 +67,15 @@ public class CallSoap
 
                 }
                 //Adı
-
                 response=x.get(2);
                 response2=x;
                 //sicil
                 //response=x.get(3);
-
             }
-
         }
         catch (Exception exception)
         {
-            response=exception.toString();
+            response=exception.toString()+"hataaaa";
         }
 
         return response2.toString();

@@ -89,3 +89,28 @@ public class BaşvuruCallSoap {
         return response2.toString();
     }
 }
+
+
+
+
+  if  (primitive2 != null) {
+response3="1";
+              //  response2=primitive;
+                SoapObject diffgram2 = (SoapObject) primitive2.getProperty("diffgram");
+                System.out.println(primitive2+":eses");
+               /* SoapObject NewDataSet = (SoapObject) diffgram.getProperty("DocumentElement");
+                SoapObject RepInfo = (SoapObject) NewDataSet.getProperty("BASVURULARı");
+                for (int i = 0; i < RepInfo.getPropertyCount(); i++) {
+                    PropertyInfo info = new PropertyInfo();
+                    RepInfo.getPropertyInfo(i, info);
+                    System.out.println("repp...." + RepInfo.getProperty(i).toString());
+                    basvuruList.add(RepInfo.getProperty(i).toString());
+
+            }
+                response2=basvuruList;*/
+              /*  //Adı
+
+                response=x.get(2);
+                response2=x;
+                //sicil
+                //response=x.get(3);

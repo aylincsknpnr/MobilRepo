@@ -12,7 +12,8 @@ public class Caller extends Thread
 
     public CallSoap cs;
     public String a,b;
-public String resp;
+    public String resp;
+
     public void run(){
         try{
             cs=new CallSoap();
@@ -20,8 +21,11 @@ public String resp;
             Second_Fragment.rslt=resp;
             Third_Fragment.rslt=resp;
 
+
         }catch(Exception ex)
-        {Second_Fragment.rslt=ex.toString();}
+        {Second_Fragment.rslt=ex.toString();
+
+        }
     }
     public String ReturnValue(){
        // System.out.println("Dönen Değer:" + Second_Fragment.rslt);

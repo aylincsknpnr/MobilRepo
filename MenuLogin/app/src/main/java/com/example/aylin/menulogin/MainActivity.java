@@ -129,7 +129,8 @@ public class MainActivity extends AppCompatActivity
             fragmentManager.beginTransaction().replace(R.id.content_main, new Third_Fragment()).commit();
 
         } else if (id == R.id.nav_send) {
-
+            FragmentManager fragmentManager=getFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.content_main, new Basvuru_Fragment()).commit();
         }else if (id==R.id.out){
 
 
@@ -139,7 +140,6 @@ public class MainActivity extends AppCompatActivity
             FragmentManager fragmentManager=getFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.content_main, new Third_Fragment()).commit();
         }
-
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
