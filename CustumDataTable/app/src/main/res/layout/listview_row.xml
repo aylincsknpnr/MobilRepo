@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.aylin.custumdatatable.MainActivity"
+    tools:showIn="@layout/activity_main">
+<LinearLayout
+    android:id = "@+id/relativeLayout1"
+    android:layout_width = "fill_parent"
+    android:layout_height = "wrap_content"
+    android:background = "#CEF6E3" >
+
+    <TextView
+        android:id = "@+id/sNo"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "1"
+        android:background = "#5882FA"
+        android:ellipsize = "end"
+        android:padding = "5dp"
+        android:text = "sNo"
+        android:singleLine = "true" />
+
+    <TextView
+        android:id = "@+id/product"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "2"
+        android:background = "#5882FA"
+        android:ellipsize = "end"
+        android:padding = "5dp"
+        android:text = "product"
+        android:singleLine = "true" />
+
+    <TextView
+        android:id = "@+id/category"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "1.5"
+        android:background = "#5882FA"
+        android:ellipsize = "end"
+        android:padding = "5dp"
+        android:text = "category"
+        android:singleLine = "true" />
+
+    <TextView
+        android:id = "@+id/price"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "1"
+        android:background = "#5882FA"
+        android:ellipsize = "end"
+        android:padding = "5dp"
+        android:text = "price"
+        android:singleLine = "true" />
+</LinearLayout>
+</LinearLayout>
