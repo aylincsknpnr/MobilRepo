@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">listViewHeader</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="list_items">
+        <item>iPhone__6</item>
+        <item>İpad__Air</item>
+        <item>İpad__Mini</item>
+        <item>Galaxy__Ace</item>
+        <item>Galaxy__Alpha</item>
+        <item>Galaxy__Note</item>
+    </string-array>
+</resources>
