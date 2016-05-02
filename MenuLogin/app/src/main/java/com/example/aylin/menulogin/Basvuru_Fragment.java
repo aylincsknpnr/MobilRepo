@@ -41,9 +41,7 @@ public class Basvuru_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         myView = inflater.inflate(R.layout.basvuru_layout, container, false);
 
-
         final ArrayList<String> items = new ArrayList<String>();
-
         Button b3 = (Button) myView.findViewById(R.id.buttonget);
         b3.setOnClickListener(new OnClickListener() {
 
@@ -70,7 +68,6 @@ public class Basvuru_Fragment extends Fragment {
                     }
                     System.out.println("Result:" + rslt3);
                     Toast.makeText(getActivity().getApplicationContext(), rslt3, Toast.LENGTH_SHORT).show();
-
                 } catch (Exception ex) {
                     System.out.println(ex.toString() + "hatacııkkk");
                 }
@@ -81,7 +78,6 @@ public class Basvuru_Fragment extends Fragment {
                 result = result.replace(" ", "");
                 System.out.println("Dönenin Resultı:" + result);
                 int index = result.indexOf(",");
-                //
 
                 items.add("ARANABİLİR");
                 items.add("Yasemin KARAKURT DİNÇER");
@@ -91,18 +87,11 @@ public class Basvuru_Fragment extends Fragment {
                 items.add("Kendisi");
                 postValue=items;
                 BasvurulistActivity.items2=postValue;
-              /*  for (String item :  items) {
-                    items_list.add(item);
-                }
-                ;*/
-
                 System.out.println("items :" + items.get(1) + "2:" + items.get(2));
                 System.out.println("postValue:"+postValue);
                 startActivity(new Intent("android.intent.action.DIGER"));
-
             }
         });
-
 
         return myView;
     }
@@ -110,6 +99,5 @@ public class Basvuru_Fragment extends Fragment {
     public static ArrayList<String> postValue(){
         return BasvurulistActivity.items2;
     }
-
 }
 

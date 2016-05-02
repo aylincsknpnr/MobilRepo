@@ -1,21 +1,15 @@
 package com.example.aylin.menulogin;
-
 /**
  * Created by aylin on 30.04.2016.
  */
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
 import org.w3c.dom.Text;
 
-/**
- * Created by aylin on 30.04.2016.
- */
 public class ListAdapter  extends ArrayAdapter<String>{
     int vg;
     String[] items_list;

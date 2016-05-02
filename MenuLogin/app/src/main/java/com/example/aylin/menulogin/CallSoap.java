@@ -15,11 +15,8 @@ public class CallSoap
 {
     ArrayList<String> x=new ArrayList<String>();
     public final String SOAP_ACTION = "http://tempuri.org/GetKullanici_Y";
-
     public  final String OPERATION_NAME = "GetKullanici_Y";
-
     public  final String WSDL_TARGET_NAMESPACE = "http://tempuri.org/";
-
     public  final String SOAP_ADDRESS = "http://213.14.73.146:82/gelincik/Kullanici_WebService.asmx";
     public CallSoap()
     {
@@ -27,7 +24,6 @@ public class CallSoap
     public String Call(String a,String b)
     {
         SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE,OPERATION_NAME);
-
         PropertyInfo pi=new PropertyInfo();
         pi.setName("kartno_yeni");
         pi.setValue(a);
@@ -42,11 +38,8 @@ public class CallSoap
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
                 SoapEnvelope.VER11);
         envelope.dotNet = true;
-
         envelope.setOutputSoapObject(request);
-
         HttpTransportSE httpTransport = new HttpTransportSE(SOAP_ADDRESS);
-        Object response=null;
         Object response2=null;
         try
         {
@@ -66,20 +59,13 @@ public class CallSoap
                     x.add(RepInfo.getProperty(i).toString());
 
                 }
-                //Adı
-                response=x.get(2);
                 response2=x;
-                //sicil
-                //response=x.get(3);
             }
         }
         catch (Exception exception)
         {
-            response=exception.toString()+"hataaaa";
+            response2=exception.toString()+"hataaaa";
         }
-
         return response2.toString();
     }
-
-
 }

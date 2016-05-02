@@ -26,14 +26,11 @@ public class Second_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         myView=inflater.inflate(R.layout.second_layout, container, false);
-
-
         Button b1=(Button) myView.findViewById(R.id.button1);
         b1.setOnClickListener(new OnClickListener() {
 
             @Override public void onClick(View arg0) {
                 // TODO Auto-generated method stub
-
                 try
                 {
                     EditText ed1=(EditText)myView.findViewById(R.id.editText1);
@@ -56,7 +53,6 @@ public class Second_Fragment extends Fragment {
                 }catch(Exception ex) {
                     System.out.println( ex.toString());
                 }
-
             } });
         return myView;
     }

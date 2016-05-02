@@ -1,9 +1,7 @@
 package com.example.aylin.menulogin;
-
 /**
  * Created by aylin on 22.04.2016.
  */
-
 public class UserModel {
     public int id;
     public String username;
@@ -14,8 +12,6 @@ public class UserModel {
         this.username = username;
         this.password = password;
     }
-
     public UserModel() {
-
     }
 }

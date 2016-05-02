@@ -21,7 +21,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  * Created by aylin on 16.04.2016.
  */
@@ -33,19 +32,18 @@ TextView tv;
     public CallSoap cs;
     public static String rslt="";
     Caller c;
-
     DatabaseHelper db;
+
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         db = new DatabaseHelper(activity);
-
     }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         myView=inflater.inflate(R.layout.third_layout, container, false);
-
         try{
             super.onCreate(savedInstanceState);
             username = (EditText) myView.findViewById(R.id.un);
@@ -53,14 +51,12 @@ TextView tv;
             tv = (TextView) myView.findViewById(R.id.tv);
             id2 = (EditText) myView.findViewById(R.id.id2);
             Button add = (Button) myView.findViewById(R.id.add);
-
             add.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View v) {
                     tv.setText("");
                     try {
-
                         rslt = "START";
                         Caller c = new Caller();
                         c.a = username.getText().toString();
@@ -72,28 +68,22 @@ TextView tv;
                                 Thread.sleep(10);
                             } catch (Exception ex) {
                                 ex.printStackTrace();
-
                             }
                         }
                         System.out.println("Result:" + rslt);
                         Toast.makeText(getActivity().getApplicationContext(), rslt, Toast.LENGTH_SHORT).show();
-
                     } catch (Exception ex) {
                         System.out.println(ex.toString());
                     }
-
                     UserModel dbim = new UserModel();
                     dbim.username = rslt;
                     dbim.password = password.getText().toString();
                     // dbim.username = username.getText().toString();
-
                     //dbim.password = password.getText().toString();
                     db.addUserDetail(dbim);
                     list = db.getAllUsersList();
                     print(list);
                     System.out.println("başarılı");
-
-
                 }
 
 
@@ -103,7 +93,6 @@ TextView tv;
 
                 @Override
                 public void onClick(View v) {
-
                     tv.setText("");
                     String user_id = id2.getText().toString();
                     db.deleteEntry(Integer.parseInt(user_id));
@@ -111,30 +100,11 @@ TextView tv;
                     print(list);
                 }
             });
-
         }catch(Exception e){
             e.printStackTrace();
         }
         return myView;
         }
-
-
-/*
-    private void insertRow(String username , String password){
-
-        try{
-            SQLiteDatabase db = dbHelper.getWritableDatabase();
-            ContentValues values = new ContentValues();
-            values.put("KEY_USERNAME", username);
-            values.put("KEY_PASSWORD", password);
-
-            db.insertOrThrow("KISI", null, values);
-            System.out.println("başarılı");
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-
-    }*/
 
     private void print(List<UserModel> list) {
 // TODO Auto-generated method stub
@@ -154,5 +124,4 @@ TextView tv;
         }
         return false;
     }
-
 }
