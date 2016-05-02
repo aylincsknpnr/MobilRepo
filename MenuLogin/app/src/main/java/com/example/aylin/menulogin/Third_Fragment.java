@@ -27,17 +27,20 @@ import java.util.List;
 public class Third_Fragment extends Fragment {
     View myView;
     List<UserModel> list = new ArrayList<UserModel>();
+    List<UserInfoModel>list2=new ArrayList<UserInfoModel>();
     EditText username, password, id2;
 TextView tv;
     public CallSoap cs;
     public static String rslt="";
     Caller c;
     DatabaseHelper db;
+    UserInfoDatabaseHelper uidb;
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         db = new DatabaseHelper(activity);
+        uidb=new UserInfoDatabaseHelper(activity);
     }
 
     @Nullable
@@ -75,15 +78,30 @@ TextView tv;
                     } catch (Exception ex) {
                         System.out.println(ex.toString());
                     }
+                    //kullanıcı veritabanına ekleniyor
                     UserModel dbim = new UserModel();
-                    dbim.username = rslt;
+                    dbim.username = username.getText().toString();
                     dbim.password = password.getText().toString();
-                    // dbim.username = username.getText().toString();
-                    //dbim.password = password.getText().toString();
                     db.addUserDetail(dbim);
                     list = db.getAllUsersList();
-                    print(list);
+                   // print(list);
                     System.out.println("başarılı");
+
+//sonuc split edlip tek tek veritabanına ekleniyor
+                    String result = rslt.replace("[", "");
+                    result = result.replace("]","");
+                    String strArray[] = result.split(",");
+                    System.out.println("strarray"+strArray[1]);
+
+                    UserInfoModel uım=new UserInfoModel();
+                   uım.id=Integer.parseInt(strArray[0]);
+                    uım.tc=strArray[1];
+                    uım.avukat=strArray[2];
+                    uım.sicil=strArray[3];
+                    uım.tel=strArray[4];
+                    uidb.addUserDetail(uım);
+                    list2=uidb.getAllUserInfoList();
+                    print(list2);
                 }
 
 
@@ -97,7 +115,7 @@ TextView tv;
                     String user_id = id2.getText().toString();
                     db.deleteEntry(Integer.parseInt(user_id));
                     list = db.getAllUsersList();
-                    print(list);
+                  //  print(list);
                 }
             });
         }catch(Exception e){
@@ -106,11 +124,14 @@ TextView tv;
         return myView;
         }
 
-    private void print(List<UserModel> list) {
+    private void print(List<UserInfoModel> list2) {
 // TODO Auto-generated method stub
         String value = "";
-        for(UserModel sm : list){
+       /* for(UserModel sm : list){
             value = value+"id: "+sm.id+", name: "+sm.username+" Ph_no: "+sm.password+"\n";
+        }*/
+        for (UserInfoModel uı:list2){
+            value=value+"id: "+uı.id +", tc: "+uı.tc+"avukat: "+uı.avukat+"sicil: "+uı.sicil+"tel :"+uı.tel+"\n";
         }
         tv.setText(value);
     }

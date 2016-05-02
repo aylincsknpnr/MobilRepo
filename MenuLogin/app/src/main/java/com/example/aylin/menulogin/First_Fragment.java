@@ -21,7 +21,8 @@ public class First_Fragment extends Fragment  {
     TextView tc,isim,sicil,tel,info;
     ArrayList<String> returnList=new ArrayList<String>();
     Caller c=new Caller();
-
+    List<UserInfoModel>list2=new ArrayList<UserInfoModel>();
+    UserInfoDatabaseHelper uidb;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
@@ -31,7 +32,7 @@ public class First_Fragment extends Fragment  {
         sicil=(TextView)myView.findViewById(R.id.sicil);
         tel=(TextView) myView.findViewById(R.id.tel);
         info=(TextView) myView.findViewById(R.id.info);
-        String  result=c.ReturnValue();
+      /*  String  result=c.ReturnValue();
         result = result.replace("[","");
         result = result.replace("]","");
         result = result.replace(" ","");
@@ -46,6 +47,14 @@ public class First_Fragment extends Fragment  {
            isim.setText(items2);
             sicil.setText(items3);
             tel.setText(items4);
+*/
+
+        UserInfoModel uım=new UserInfoModel();
+
+
+
+        System.out.println("veritabanından gelen :..."+ uidb.getAllUserInfoList());
+
         return myView;
     }
 }
