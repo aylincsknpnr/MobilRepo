@@ -11,14 +11,14 @@
             android:layout_column="0"
             android:padding="10dp"
             android:layout_span="2"
-            android:text="Model"
+            android:text="Arama Durumu"
             android:textStyle="bold"
             android:background="#c0c0c0"
             />
         <TextView
             android:layout_column="1"
             android:padding="10dp"
-            android:text="Price"
+            android:text="Avukat"
             android:textStyle="bold"
             android:background="#c0c0c0"
             />

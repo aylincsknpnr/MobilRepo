@@ -40,7 +40,7 @@ public class ListAdapter  extends ArrayAdapter<String>{
             holder.txtPrice = (TextView) rowView.findViewById(R.id.txtprice);
             rowView.setTag(holder);
         }
-        String[] items=items_list[position].split(",");
+        String[] items=items_list;
         ViewHolder holder=(ViewHolder)rowView.getTag();
         holder.txtModel.setText(items[0]);
         holder.txtPrice.setText(items[1]);

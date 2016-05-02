@@ -32,13 +32,9 @@ public class Basvuru_Fragment extends Fragment {
     View myView;
     public static String rslt3 = "";
     ArrayList<String> items_list=new ArrayList<String>();
-
+    public ArrayList<String> postValue;
 
     BasvuruCaller bc = new BasvuruCaller();
-public ArrayList<String> Basvuru_Fragment(ArrayList<String> items_list){
-    this.items_list=items_list;
-    return items_list;
-}
 
     @Nullable
     @Override
@@ -88,17 +84,20 @@ public ArrayList<String> Basvuru_Fragment(ArrayList<String> items_list){
                 //
 
                 items.add("ARANABİLİR");
-                items.add("0");
+                items.add("Yasemin KARAKURT DİNÇER");
                 items.add("20160019");
                 items.add("2016-04-22T14:50:53+03:00");
-                items.add("Yasemin KARAKURT DİNÇER");
+                items.add("0");
                 items.add("Kendisi");
-                for (String item :  items) {
+                postValue=items;
+                BasvurulistActivity.items2=postValue;
+              /*  for (String item :  items) {
                     items_list.add(item);
                 }
-                ;
-                System.out.println("items :" + items.get(1) + "2:" + items.get(2));
+                ;*/
 
+                System.out.println("items :" + items.get(1) + "2:" + items.get(2));
+                System.out.println("postValue:"+postValue);
                 startActivity(new Intent("android.intent.action.DIGER"));
 
             }
@@ -106,6 +105,10 @@ public ArrayList<String> Basvuru_Fragment(ArrayList<String> items_list){
 
 
         return myView;
+    }
+
+    public static ArrayList<String> postValue(){
+        return BasvurulistActivity.items2;
     }
 
 }
