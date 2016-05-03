@@ -1,8 +1,11 @@
 package com.example.aylin.menulogin;
 
 import android.app.Fragment;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +26,8 @@ public class First_Fragment extends Fragment  {
     Caller c=new Caller();
     List<UserInfoModel>list2=new ArrayList<UserInfoModel>();
     UserInfoDatabaseHelper uidb;
+    ArrayList<String> array=new ArrayList<String>();
+    Third_Fragment tf=new Third_Fragment();
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
@@ -32,29 +37,51 @@ public class First_Fragment extends Fragment  {
         sicil=(TextView)myView.findViewById(R.id.sicil);
         tel=(TextView) myView.findViewById(R.id.tel);
         info=(TextView) myView.findViewById(R.id.info);
-      /*  String  result=c.ReturnValue();
-        result = result.replace("[","");
-        result = result.replace("]","");
-        result = result.replace(" ","");
-        int index=result.indexOf(",");
-        System.out.println(result+":gelen");
-        System.out.println("index"+index);
-        String items1="TC:"+result.substring(2, result.indexOf(",", 2));
-       String items2="Avukat:"+result.substring(result.indexOf(",",7),result.indexOf(",",14));
-        String items3="Sicil:"+result.substring(result.indexOf(",",30),result.indexOf(",",40));
-        String items4="Tel:"+result.substring(result.indexOf(",",40),result.indexOf(",",50));
-            tc.setText(items1);
-           isim.setText(items2);
-            sicil.setText(items3);
-            tel.setText(items4);
-*/
+         uidb=new UserInfoDatabaseHelper(getActivity());
 
-        UserInfoModel uım=new UserInfoModel();
+        KayitGoster();
 
+//        System.out.println("veritabanından gelen :..." + array.get(3));
 
+        String listString = "";
 
-        System.out.println("veritabanından gelen :..."+ uidb.getAllUserInfoList());
+        for (String s : array)
+        {
+            listString += s + "\t";
+            System.out.println("liststring: "+listString);
+        }
+        String[] result=listString.split("  ");
 
+        tc.setText(result[1]);
+        isim.setText(result[2]);
+        sicil.setText(result[3]);
+        tel.setText(result[4]);
+
+       // System.out.println(tf.returnDatabaseValue());
         return myView;
     }
+
+
+
+    public void KayitGoster() {
+        SQLiteDatabase db = uidb.getReadableDatabase();
+        String selectQuery = "SELECT  * FROM  info";
+        Cursor c = db.rawQuery(selectQuery, null);
+        array.clear(); int id = 0;
+        String tc = "";
+        String avukat="";
+        String sicil="";
+        String tel="";
+        String gelen="";
+        while (c.moveToNext()) {
+            id = c.getInt(c.getColumnIndex("id"));
+            tc=c.getString(c.getColumnIndex("tc"));
+            avukat=c.getString(c.getColumnIndex("avukat"));
+            sicil=c.getString(c.getColumnIndex("sicil"));
+            tel=c.getString(c.getColumnIndex("tel"));
+            gelen+=id+" "+tc+" "+avukat+" "+sicil+" "+tel+"\n";
+            array.add(id+  "  "+tc+  "  "+avukat+  "  "+sicil+ " "+tel);
+        }
+    }
+
 }

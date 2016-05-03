@@ -27,7 +27,7 @@ import java.util.List;
 public class Third_Fragment extends Fragment {
     View myView;
     List<UserModel> list = new ArrayList<UserModel>();
-    List<UserInfoModel>list2=new ArrayList<UserInfoModel>();
+   public static List<UserInfoModel>list2=new ArrayList<UserInfoModel>();
     EditText username, password, id2;
 TextView tv;
     public CallSoap cs;
@@ -94,7 +94,7 @@ TextView tv;
                     System.out.println("strarray"+strArray[1]);
 
                     UserInfoModel uım=new UserInfoModel();
-                   uım.id=Integer.parseInt(strArray[0]);
+                 //  uım.id=Integer.parseInt(strArray[0]);
                     uım.tc=strArray[1];
                     uım.avukat=strArray[2];
                     uım.sicil=strArray[3];
@@ -132,6 +132,7 @@ TextView tv;
         }*/
         for (UserInfoModel uı:list2){
             value=value+"id: "+uı.id +", tc: "+uı.tc+"avukat: "+uı.avukat+"sicil: "+uı.sicil+"tel :"+uı.tel+"\n";
+            System.out.println("liste başarılı" +value);
         }
         tv.setText(value);
     }
@@ -144,5 +145,8 @@ TextView tv;
             return true;
         }
         return false;
+    }
+    public List<UserInfoModel> returnDatabaseValue(){
+        return list2;
     }
 }

@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity
     TextView tv;
     List<UserModel> list = new ArrayList<UserModel>();
     DatabaseHelper db;
+    UserInfoDatabaseHelper udb;
     public CallSoap cs;
     public Second_Fragment sf;
     @Override
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity
         if(Third_Fragment.giriskontrol(getApplicationContext())){//önceden giriş yapmış ise
             FragmentManager fragmentManager2=getFragmentManager();
             fragmentManager2.beginTransaction().replace(R.id.content_main, new Second_Fragment()).commit();
+
         }else{//giriş yapmamış ise login sayfasına yönlenecek
             FragmentManager fragmentManager=getFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.content_main, new Third_Fragment()).commit();
@@ -116,6 +118,8 @@ public class MainActivity extends AppCompatActivity
         }else if (id==R.id.out){
                     DatabaseHelper db = new DatabaseHelper(getApplicationContext());
                     db.resetTables(); //Databasi sıfırlıyoruz.Verileri siliyoruz.Ve Login sayfasına gidiyoruz.
+                    UserInfoDatabaseHelper udb=new UserInfoDatabaseHelper(getApplicationContext());
+                    udb.resetTables();
             FragmentManager fragmentManager=getFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.content_main, new Third_Fragment()).commit();
 
