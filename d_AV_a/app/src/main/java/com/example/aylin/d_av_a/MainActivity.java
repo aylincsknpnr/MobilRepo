@@ -151,12 +151,7 @@ public class MainActivity extends AppCompatActivity {
                         fragmentTransaction4.replace(R.id.frame, third_fragment2);
                         fragmentTransaction4.commit();
                         return true;
-                    case R.id.trash:
-                        Toast.makeText(getApplicationContext(), "Trash Selected", Toast.LENGTH_SHORT).show();
-                        return true;
-                    case R.id.spam:
-                        Toast.makeText(getApplicationContext(), "Spam Selected", Toast.LENGTH_SHORT).show();
-                        return true;
+
                     default:
                         Toast.makeText(getApplicationContext(), "Somethings Wrong", Toast.LENGTH_SHORT).show();
                         return true;

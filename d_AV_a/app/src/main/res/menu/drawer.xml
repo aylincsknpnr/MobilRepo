@@ -33,16 +33,6 @@
             android:checked="false"
             android:icon="@drawable/ic_email_black"
             android:title="Çıkış" />
-        <item
-            android:id="@+id/trash"
-            android:checked="false"
-            android:icon="@drawable/ic_delete_black"
-            android:title="@string/trash_string" />
-        <item
-            android:id="@+id/spam"
-            android:checked="false"
-            android:icon="@drawable/ic_error_black"
-            android:title="@string/spam_string" />
 
     </group>
 </menu>

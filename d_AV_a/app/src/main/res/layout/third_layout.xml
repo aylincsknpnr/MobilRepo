@@ -35,10 +35,10 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_margin="4dp"
-            android:text="LOGİN AND SAVE "
+            android:text="LOGİN"
             />
 
-        <EditText
+       <!-- <EditText
             android:id="@+id/id2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -46,20 +46,20 @@
             android:padding="10dp"
             android:hint="Id"
             android:textColorHint="#bbbbbb"
-            android:password="true"></EditText>
+            android:password="true"></EditText>-->
 
-        <Button
+      <!--  <Button
             android:id="@+id/delete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_margin="4dp"
             android:text="DELETE "
-            />
-        <TextView
+            />-->
+            <!-- <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/tv"/>
+            android:id="@+id/tv"/>-->
     </LinearLayout>
 
 </RelativeLayout>

@@ -50,14 +50,14 @@ public class Third_Fragment extends Fragment {
             super.onCreate(savedInstanceState);
             username = (EditText) v.findViewById(R.id.un);
             password = (EditText) v.findViewById(R.id.pw);
-            tv = (TextView) v.findViewById(R.id.tv);
-            id2 = (EditText) v.findViewById(R.id.id2);
+         //   tv = (TextView) v.findViewById(R.id.tv);
+            //id2 = (EditText) v.findViewById(R.id.id2);
             Button add = (Button) v.findViewById(R.id.add);
             add.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View v) {
-                    tv.setText("");
+//                    tv.setText("");
                     try {
                         rslt = "START";
                         Caller c = new Caller();
@@ -106,7 +106,7 @@ public class Third_Fragment extends Fragment {
 
 
             });
-            Button b1=(Button) v.findViewById(R.id.delete);
+         /*   Button b1=(Button) v.findViewById(R.id.delete);
             b1.setOnClickListener(new View.OnClickListener() {
 
                 @Override
@@ -117,7 +117,7 @@ public class Third_Fragment extends Fragment {
                     list = db.getAllUsersList();
                     //  print(list);
                 }
-            });
+            });*/
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -134,7 +134,7 @@ public class Third_Fragment extends Fragment {
             value=value+"id: "+uı.id +", tc: "+uı.tc+"avukat: "+uı.avukat+"sicil: "+uı.sicil+"tel :"+uı.tel+"\n";
             System.out.println("liste başarılı" +value);
         }
-        tv.setText(value);
+      //  tv.setText(value);
     }
 
     public static boolean giriskontrol(Context context){
