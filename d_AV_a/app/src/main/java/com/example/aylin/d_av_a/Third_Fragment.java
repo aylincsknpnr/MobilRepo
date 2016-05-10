@@ -50,14 +50,13 @@ public class Third_Fragment extends Fragment {
             super.onCreate(savedInstanceState);
             username = (EditText) v.findViewById(R.id.un);
             password = (EditText) v.findViewById(R.id.pw);
-         //   tv = (TextView) v.findViewById(R.id.tv);
-            //id2 = (EditText) v.findViewById(R.id.id2);
+
             Button add = (Button) v.findViewById(R.id.add);
             add.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View v) {
-//                    tv.setText("");
+
                     try {
                         rslt = "START";
                         Caller c = new Caller();
@@ -106,20 +105,10 @@ public class Third_Fragment extends Fragment {
 
 
             });
-         /*   Button b1=(Button) v.findViewById(R.id.delete);
-            b1.setOnClickListener(new View.OnClickListener() {
 
-                @Override
-                public void onClick(View v) {
-                    tv.setText("");
-                    String user_id = id2.getText().toString();
-                    db.deleteEntry(Integer.parseInt(user_id));
-                    list = db.getAllUsersList();
-                    //  print(list);
-                }
-            });*/
         }catch(Exception e){
             e.printStackTrace();
+            Toast.makeText(getActivity().getApplicationContext(), "Başarısız Giriş", Toast.LENGTH_SHORT).show();
         }
         return v;
     }
@@ -127,21 +116,18 @@ public class Third_Fragment extends Fragment {
     private void print(List<UserInfoModel> list2) {
 // TODO Auto-generated method stub
         String value = "";
-       /* for(UserModel sm : list){
-            value = value+"id: "+sm.id+", name: "+sm.username+" Ph_no: "+sm.password+"\n";
-        }*/
+
         for (UserInfoModel uı:list2){
             value=value+"id: "+uı.id +", tc: "+uı.tc+"avukat: "+uı.avukat+"sicil: "+uı.sicil+"tel :"+uı.tel+"\n";
             System.out.println("liste başarılı" +value);
         }
-      //  tv.setText(value);
+
     }
 
     public static boolean giriskontrol(Context context){
         DatabaseHelper db = new DatabaseHelper(context);
-        int count = db.getRowCount();// databasedeki table logindeki row sayısı
-        if(count > 0){//0 dan fazla ise giriş yapmıs önceden demek
-//kullanıcı giriş yapmıs
+        int count = db.getRowCount();
+        if(count > 0){
             return true;
         }
         return false;

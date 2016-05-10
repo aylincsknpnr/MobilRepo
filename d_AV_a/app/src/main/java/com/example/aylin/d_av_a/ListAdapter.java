@@ -1,12 +1,10 @@
 package com.example.aylin.d_av_a;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
 /**
  * Created by aylin on 30.04.2016.
  */
@@ -38,14 +36,13 @@ public class ListAdapter extends ArrayAdapter<String> {
             holder.tcTxt = (TextView) rowView.findViewById(R.id.tcTxt);
             rowView.setTag(holder);
         }
-            String[] items=items_list;
-        System.out.println("positiolı olan:"+ items);
-            ViewHolder holder=(ViewHolder)rowView.getTag();
-            holder.avTxt.setText(items[2]);
-            holder.sicilTxt.setText(items[3]);
-            holder.telTxt.setText(items[4]);
-            holder.tcTxt.setText(items[1]);
-            return rowView;
-        }
+        String[] items=items_list;
+        ViewHolder holder=(ViewHolder)rowView.getTag();
+        holder.avTxt.setText(items[2]);
+        holder.sicilTxt.setText(items[3]);
+        holder.telTxt.setText(items[4]);
+        holder.tcTxt.setText(items[1]);
+        System.out.println("itemss parça: "+ items_list);
+        return rowView;
     }
-
+}

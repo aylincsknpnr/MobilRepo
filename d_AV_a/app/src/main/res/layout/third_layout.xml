@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-2dp"
             android:padding="10dp"
-            android:hint="User Name"
+            android:hint="Kullanıcı Adı Giriniz"
             android:textColorHint="#bbbbbb"></EditText>
         <EditText
             android:id="@+id/pw"
@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-2dp"
             android:padding="10dp"
-            android:hint="Password"
+            android:hint="Parola Giriniz"
             android:textColorHint="#bbbbbb"
             android:password="true"></EditText>
 
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_margin="4dp"
-            android:text="LOGİN"
+            android:text="GİRİŞ"
             />
 
        <!-- <EditText

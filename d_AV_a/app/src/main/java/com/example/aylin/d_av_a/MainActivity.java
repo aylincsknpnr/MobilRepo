@@ -3,6 +3,7 @@ package com.example.aylin.d_av_a;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
@@ -39,10 +40,11 @@ public class MainActivity extends AppCompatActivity {
     public Second_Fragment sf;
     TextView drawerUsername;
      TextView drawerAccount;
+    LoginActivity la;
 
     First_Fragment ff;
     public ArrayList<String> array = new ArrayList<String>();
-    //
+
     //Defining Variables
     private Toolbar toolbar;
     private NavigationView navigationView;
@@ -55,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
         udb=new UserInfoDatabaseHelper(this);
         drawerUsername=(TextView)findViewById(R.id.username);
         drawerAccount=(TextView)findViewById(R.id.email);
-        if (Third_Fragment.giriskontrol(getApplicationContext())) {//önceden giriş yapmış ise
+        la=new LoginActivity();
+        if (LoginActivity.giriskontrol(getApplicationContext())) {//önceden giriş yapmış ise
          KayitGoster();
             String [] result;
             String listString = "";
@@ -67,18 +70,10 @@ public class MainActivity extends AppCompatActivity {
             result=listString.split("  ");
             drawerUsername.setText(result[2]);
             drawerAccount.setText(result[3]);
-            Second_Fragment second_fragment = new Second_Fragment();
-            android.support.v4.app.FragmentTransaction fragmentTransaction6 = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction6.replace(R.id.frame, second_fragment);
-            fragmentTransaction6.commit();
 
         } else {//giriş yapmamış ise login sayfasına yönlenecek
             drawerUsername.setText("Unknown Username");
             drawerAccount.setText("Unknown Info");
-            Third_Fragment third_fragment = new Third_Fragment();
-            android.support.v4.app.FragmentTransaction fragmentTransaction5 = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction5.replace(R.id.frame, third_fragment);
-            fragmentTransaction5.commit();
         }
         // Initializing Toolbar and setting it as the actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -134,10 +129,6 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case R.id.drafts:
 
-                        Third_Fragment third_fragment = new Third_Fragment();
-                        android.support.v4.app.FragmentTransaction fragmentTransaction3 = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction3.replace(R.id.frame, third_fragment);
-                        fragmentTransaction3.commit();
                         return true;
                     case R.id.allmail:
                         drawerUsername.setText("Unknown Username");
@@ -146,10 +137,7 @@ public class MainActivity extends AppCompatActivity {
                         db.resetTables(); //Databasi sıfırlıyoruz.Verileri siliyoruz.Ve Login sayfasına gidiyoruz.
                         UserInfoDatabaseHelper udb = new UserInfoDatabaseHelper(getApplicationContext());
                         udb.resetTables();
-                        Third_Fragment third_fragment2 = new Third_Fragment();
-                        android.support.v4.app.FragmentTransaction fragmentTransaction4 = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction4.replace(R.id.frame, third_fragment2);
-                        fragmentTransaction4.commit();
+                        startActivity(new Intent("android.intent.action.MAIN"));
                         return true;
 
                     default:
@@ -157,7 +145,6 @@ public class MainActivity extends AppCompatActivity {
                         return true;
 
                 }
-
             }
 
         });
