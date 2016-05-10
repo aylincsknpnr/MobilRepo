@@ -1,11 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ListView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listv"
-        android:layout_gravity="center_horizontal" />
+        android:padding="10dp"
+        android:weightSum="1"
+        android:layout_centerVertical="true">
 
-</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Avukat ADI: "
+            android:layout_marginTop="20dp"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="a"
+            android:id="@+id/ad"
+            android:layout_marginTop="20dp"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TC: "
+            android:layout_marginTop="20dp"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="t"
+            android:id="@+id/tc"
+            android:layout_marginTop="20dp"
+             />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sicil: "
+            android:layout_marginTop="20dp"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="s"
+            android:id="@+id/sicil"
+            android:layout_marginTop="20dp"
+           />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tel: "
+            android:layout_marginTop="20dp"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="t"
+            android:id="@+id/tel"
+            android:layout_marginTop="20dp"
+             />
+
+    </LinearLayout>
+</RelativeLayout>
