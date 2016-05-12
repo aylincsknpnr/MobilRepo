@@ -137,7 +137,12 @@ public class MainActivity extends AppCompatActivity {
                         db.resetTables(); //Databasi sıfırlıyoruz.Verileri siliyoruz.Ve Login sayfasına gidiyoruz.
                         UserInfoDatabaseHelper udb = new UserInfoDatabaseHelper(getApplicationContext());
                         udb.resetTables();
-                        startActivity(new Intent("android.intent.action.MAIN"));
+
+                        Second_Fragment second_fragment2 = new Second_Fragment();
+                        android.support.v4.app.FragmentTransaction fragmentTransaction22 = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction22.replace(R.id.frame, second_fragment2);
+                        fragmentTransaction22.commit();
+                        //startActivity(new Intent("android.intent.action.MAIN"));
                         return true;
 
                     default:

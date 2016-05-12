@@ -5,8 +5,6 @@ package com.example.aylin.d_av_a;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,35 +21,46 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 public class First_Fragment extends Fragment {
-    RecyclerView recyclerView;
-    List<UserInfoModel> userInfoModels;
     TextView tv3;
-    Caller c=new Caller();
-    UserInfoDatabaseHelper uidb;
     View v;
+    public String[] result2;
+    TextView tc,isim,sicil,tel,info;
+    ArrayList<String> returnList=new ArrayList<String>();
+    Caller c=new Caller();
+    List<UserInfoModel>list2=new ArrayList<UserInfoModel>();
+    UserInfoDatabaseHelper uidb;
+    public ArrayList<String> array=new ArrayList<String>();
+    Third_Fragment tf=new Third_Fragment();
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         v=inflater.inflate(R.layout.first_layout, container, false);
+        tc=(TextView) v.findViewById(R.id.tc);
+        isim=(TextView) v.findViewById(R.id.ad);
+        sicil=(TextView)v.findViewById(R.id.sicil);
+        tel=(TextView) v.findViewById(R.id.tel);
+        info=(TextView) v.findViewById(R.id.info);
         uidb=new UserInfoDatabaseHelper(getActivity());
-
-        recyclerView= (RecyclerView) v.findViewById(R.id.my_recycler_view);
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setHasFixedSize(true);
         KayitGoster();
-        Recyclerview adapter=new Recyclerview(getActivity(),userInfoModels);
-        recyclerView.setAdapter(adapter);
-
-
+        String [] result;
+        String listString = "";
+        for (String s : array)
+        {
+            listString += s + "\t";
+        }
+        System.out.println(listString);
+        result=listString.split(" ");
+        tc.setText(result[2]);
+        isim.setText(result[4]+" "+result[5]+" "+result[6]);
+        sicil.setText(result[8]);
+        tel.setText(result[10]);
         return v;
     }
     public void KayitGoster() {
-        userInfoModels=new ArrayList<>();
         SQLiteDatabase db = uidb.getReadableDatabase();
         String selectQuery = "SELECT * FROM davaUserInfo";
         Cursor c = db.rawQuery(selectQuery, null);
-        userInfoModels.clear(); int id = 0;
+        array.clear(); int id = 0;
         String tc = "";
         String avukat="";
         String sicil="";
@@ -64,7 +73,7 @@ public class First_Fragment extends Fragment {
             sicil=c.getString(c.getColumnIndex("sicil"));
             tel=c.getString(c.getColumnIndex("tel"));
             gelen+=id+" "+tc+" "+avukat+" "+sicil+" "+tel+"\n";
-            userInfoModels.add(new UserInfoModel(id, tc, avukat, sicil, tel));
+            array.add(id+ " "+tc+ " "+avukat+ " "+sicil+ " "+tel);
         }
     }
 }
