@@ -75,7 +75,7 @@ public class LoginActivity extends Activity {
                             }
                         }
                         System.out.println("Result:" + rslt);
-                        Toast.makeText(getApplicationContext(), rslt, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(), rslt, Toast.LENGTH_SHORT).show();
                         //kullanıcı veritabanına ekleniyor
                         UserModel dbim = new UserModel();
                         dbim.username = username.getText().toString();
@@ -107,7 +107,7 @@ public class LoginActivity extends Activity {
 
             });
         } catch (Exception e) {
-            e.printStackTrace();
+         //   e.printStackTrace();
             Toast.makeText(this.getApplicationContext(), "Başarısız Giriş", Toast.LENGTH_SHORT).show();
         }
 }

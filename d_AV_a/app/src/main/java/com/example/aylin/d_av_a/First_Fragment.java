@@ -2,6 +2,7 @@ package com.example.aylin.d_av_a;
 /**
  * Created by aylin on 05.05.2016.
  */
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -16,7 +17,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -31,6 +36,7 @@ public class First_Fragment extends Fragment {
     UserInfoDatabaseHelper uidb;
     public ArrayList<String> array=new ArrayList<String>();
     Third_Fragment tf=new Third_Fragment();
+    ImageView profile;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
@@ -41,6 +47,7 @@ public class First_Fragment extends Fragment {
         tel=(TextView) v.findViewById(R.id.tel);
         info=(TextView) v.findViewById(R.id.info);
         uidb=new UserInfoDatabaseHelper(getActivity());
+        profile=(ImageView)v.findViewById(R.id.imageView1);
         KayitGoster();
         String [] result;
         String listString = "";
@@ -49,11 +56,12 @@ public class First_Fragment extends Fragment {
             listString += s + "\t";
         }
         System.out.println(listString);
-        result=listString.split(" ");
-        tc.setText(result[2]);
-        isim.setText(result[4]+" "+result[5]+" "+result[6]);
-        sicil.setText(result[8]);
-        tel.setText(result[10]);
+        result=listString.split("  ");
+        tc.setText(result[1]);
+        isim.setText(result[2]);
+        sicil.setText(result[3]);
+        tel.setText(result[4]);
+        Picasso.with(getActivity().getApplicationContext()).load("http://dmzws.barokart.com.tr/dmz.xml.info/TBB2Image.ashx?id=6&baroid="+result[3]+"&t=1").into(profile);
         return v;
     }
     public void KayitGoster() {

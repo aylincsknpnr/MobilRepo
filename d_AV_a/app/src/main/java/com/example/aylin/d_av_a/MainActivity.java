@@ -26,6 +26,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     TextView drawerUsername;
      TextView drawerAccount;
     LoginActivity la;
+    ImageView profile;
 
     First_Fragment ff;
     public ArrayList<String> array = new ArrayList<String>();
@@ -57,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         udb=new UserInfoDatabaseHelper(this);
         drawerUsername=(TextView)findViewById(R.id.username);
         drawerAccount=(TextView)findViewById(R.id.email);
+        profile=(ImageView)findViewById(R.id.profile_image);
         la=new LoginActivity();
         if (LoginActivity.giriskontrol(getApplicationContext())) {//önceden giriş yapmış ise
          KayitGoster();
@@ -70,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             result=listString.split("  ");
             drawerUsername.setText(result[2]);
             drawerAccount.setText(result[3]);
-
+            Picasso.with(this).load("http://dmzws.barokart.com.tr/dmz.xml.info/TBB2Image.ashx?id=6&baroid="+result[3].replace(" ", "")+"&t=1").into(profile);
         } else {//giriş yapmamış ise login sayfasına yönlenecek
             drawerUsername.setText("Unknown Username");
             drawerAccount.setText("Unknown Info");
