@@ -13,30 +13,30 @@ import java.util.ArrayList;
 
 public class CallSoap
 {
-    public final String SOAP_ACTION = "http://tempuri.org/GetKullanici_Y";
+    public final String SOAP_ACTION2 = "http://tempuri.org/Get_Davalarim_Y";
 
-    public  final String OPERATION_NAME = "GetKullanici_Y";
+    public  final String OPERATION_NAME2 = "Get_Davalarim_Y";
 
-    public  final String WSDL_TARGET_NAMESPACE = "http://tempuri.org/";
+    public  final String WSDL_TARGET_NAMESPACE2 = "http://tempuri.org/";
 
-    public  final String SOAP_ADDRESS = "http://213.14.73.146:82/gelincik/Kullanici_WebService.asmx";
+    public  final String SOAP_ADDRESS2 = "http://213.14.73.146:82/gelincik/Davalarim_WebService.asmx";
     public CallSoap()
     {
     }
     public String Call(String a,String b)
     {
-        SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE,OPERATION_NAME);
+        SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE2,OPERATION_NAME2);
 
-        PropertyInfo pi=new PropertyInfo();
-        pi.setName("kartno_yeni");
-        pi.setValue(a);
-        pi.setType(String.class);
-        request.addProperty(pi);
-        pi=new PropertyInfo();
-        pi.setName("sifre_yeni");
-        pi.setValue(b);
-        pi.setType(String.class);
-        request.addProperty(pi);
+        PropertyInfo pi2=new PropertyInfo();
+        pi2.setName("avukattc");
+        pi2.setValue(a);
+        pi2.setType(String.class);
+        request.addProperty(pi2);
+        pi2=new PropertyInfo();
+        pi2.setName("tarih");
+        pi2.setValue(b);
+        pi2.setType(String.class);
+        request.addProperty(pi2);
 
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
                 SoapEnvelope.VER11);
@@ -44,24 +44,26 @@ public class CallSoap
 
         envelope.setOutputSoapObject(request);
 
-        HttpTransportSE httpTransport = new HttpTransportSE(SOAP_ADDRESS);
+        HttpTransportSE httpTransport = new HttpTransportSE(SOAP_ADDRESS2);
         Object response=null;
         try
         {
-            httpTransport.call(SOAP_ACTION, envelope);
+            httpTransport.call(SOAP_ACTION2, envelope);
 
             ArrayList<String> x=new ArrayList<String>();
             SoapObject primitive= (SoapObject) envelope.getResponse();
             if  (primitive != null) {
+                System.out.println(primitive);
 
                 SoapObject diffgram = (SoapObject) primitive.getProperty("diffgram");
                 SoapObject NewDataSet = (SoapObject) diffgram.getProperty("DocumentElement");
-                SoapObject RepInfo = (SoapObject) NewDataSet.getProperty("BASVURULARı");
-                for (int i = 0; i < RepInfo.getPropertyCount(); i++) {
+                SoapObject RepInfo = (SoapObject) NewDataSet.getProperty("DAVALARIM_Y");
+                for (int i = 0; i < NewDataSet.getPropertyCount(); i++) {
                     PropertyInfo info = new PropertyInfo();
-                    RepInfo.getPropertyInfo(i, info);
-                    System.out.println("repp...." + RepInfo.getProperty(i).toString());
-                    x.add(RepInfo.getProperty(i).toString());
+                    NewDataSet.getPropertyInfo(i, info);
+                    System.out.println("dataset...." + NewDataSet.getProperty(i).toString());
+
+                    x.add(NewDataSet.getProperty(i).toString());
 
                 }
                 response=x;
@@ -71,9 +73,18 @@ public class CallSoap
         catch (Exception exception)
         {
             response=exception.toString();
+            System.out.println( exception.toString());
         }
         return response.toString();
     }
 
 
 }
+
+/*
+for(int j=0; j<NewDataSet.getPropertyCount(); j++){
+                        PropertyInfo info2=new PropertyInfo();
+                        RepInfo.getPropertyInfo(j,info2);
+                        System.out.println("repınfo..."+RepInfo.getProperty(j).toString());
+                    }
+ */
