@@ -30,6 +30,7 @@ public class First_Fragment extends Fragment {
     View v;
     public String[] result2;
     TextView tc,isim,sicil,tel,info;
+    public String [] result;
     ArrayList<String> returnList=new ArrayList<String>();
     Caller c=new Caller();
     List<UserInfoModel>list2=new ArrayList<UserInfoModel>();
@@ -49,7 +50,7 @@ public class First_Fragment extends Fragment {
         uidb=new UserInfoDatabaseHelper(getActivity());
         profile=(ImageView)v.findViewById(R.id.imageView1);
         KayitGoster();
-        String [] result;
+
         String listString = "";
         for (String s : array)
         {
@@ -58,11 +59,13 @@ public class First_Fragment extends Fragment {
         System.out.println(listString);
         result=listString.split("  ");
         tc.setText(result[1]);
+      //  Buro_Fragment.returnValue=result[1];
         isim.setText(result[2]);
         sicil.setText(result[3]);
         tel.setText(result[4]);
         Picasso.with(getActivity().getApplicationContext()).load("http://dmzws.barokart.com.tr/dmz.xml.info/TBB2Image.ashx?id=6&baroid="+result[3]+"&t=1").into(profile);
         return v;
+
     }
     public void KayitGoster() {
         SQLiteDatabase db = uidb.getReadableDatabase();
@@ -84,4 +87,6 @@ public class First_Fragment extends Fragment {
             array.add(id+ " "+tc+ " "+avukat+ " "+sicil+ " "+tel);
         }
     }
+
+
 }

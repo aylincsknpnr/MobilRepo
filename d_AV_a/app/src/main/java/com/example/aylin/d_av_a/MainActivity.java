@@ -1,25 +1,15 @@
 package com.example.aylin.d_av_a;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.SubMenu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -105,17 +95,12 @@ public class MainActivity extends AppCompatActivity {
                 //Check to see which item was being clicked and perform appropriate action
                 switch (menuItem.getItemId()) {
 
-
-                    //Replacing the main content with ContentFragment Which is our Inbox View;
                     case R.id.inbox:
-                        Toast.makeText(getApplicationContext(), "Inbox Selected", Toast.LENGTH_SHORT).show();
-                        ContentFragment fragment = new ContentFragment();
-                        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.frame, fragment);
-                        fragmentTransaction.commit();
+                        Buro_Fragment buro_fragment = new Buro_Fragment();
+                        android.support.v4.app.FragmentTransaction fragmentTransaction21 = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction21.replace(R.id.frame, buro_fragment);
+                        fragmentTransaction21.commit();
                         return true;
-
-                    // For rest of the options we just show a toast on click
 
                     case R.id.starred:
 
@@ -126,13 +111,22 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case R.id.sent_mail:
 
-                        Second_Fragment second_fragment = new Second_Fragment();
-                        android.support.v4.app.FragmentTransaction fragmentTransaction2 = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction2.replace(R.id.frame, second_fragment);
-                        fragmentTransaction2.commit();
+                        BuroAvukatFragment buroAvukatFragment = new BuroAvukatFragment();
+                        android.support.v4.app.FragmentTransaction fragmentTransaction31 = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction31.replace(R.id.frame, buroAvukatFragment);
+                        fragmentTransaction31.commit();
                         return true;
                     case R.id.drafts:
-
+                        Dava_Fragment dava_fragment = new Dava_Fragment();
+                        android.support.v4.app.FragmentTransaction fragmentTransaction123 = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction123.replace(R.id.frame, dava_fragment);
+                        fragmentTransaction123.commit();
+                        return true;
+                    case R.id.drafts2:
+                        BuroDava_Fragment buroDava_fragment = new BuroDava_Fragment();
+                        android.support.v4.app.FragmentTransaction fragmentTransaction223 = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction223.replace(R.id.frame, buroDava_fragment);
+                        fragmentTransaction223.commit();
                         return true;
                     case R.id.allmail:
                         drawerUsername.setText("Unknown Username");
