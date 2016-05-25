@@ -57,13 +57,34 @@ public class BuroAvukatSoap {
                 System.out.println(primitive);
                 SoapObject diffgram = (SoapObject) primitive.getProperty("diffgram");
                 SoapObject NewDataSet = (SoapObject) diffgram.getProperty("DocumentElement");
-                SoapObject RepInfo = (SoapObject) NewDataSet.getProperty("BUROBILGILERIM_Y");
-                System.out.println(NewDataSet.getPropertyCount());
+               // SoapObject RepInfo = (SoapObject) NewDataSet.getProperty("BUROBILGILERIM_Y");
+                //System.out.println(NewDataSet.getPropertyCount());
+                String [] tcArray=new String[primitive.getPropertyCount()+1];
+                String [] adArray=new String[primitive.getPropertyCount()+1];
+                String [] baroArray=new String[primitive.getPropertyCount()+1];
+                String [] sicilArray=new String[primitive.getPropertyCount()+1];
+                String [] tbbnoArray=new String[primitive.getPropertyCount()+1];
                 for (int i = 0; i < NewDataSet.getPropertyCount(); i++) {
 
-                    x.add(NewDataSet.getProperty(i).toString().replace("anyType"," ").replace("{", " ").replace("}", " "));
-                    System.out.println(x.get(0));
-                    System.out.println(x);
+
+                        SoapObject info=(SoapObject)NewDataSet.getProperty(i);
+                        String tc=info.getProperty("TcKimlikNo").toString();
+                        String ad=info.getProperty("AdiSoyadi").toString();
+                        String baro=info.getProperty("Baro").toString();
+                        String sicil=info.getProperty("BaroSicilNo").toString();
+                        String tbbno=info.getProperty("CepTel").toString();
+
+                        tcArray[i]=tc;
+                        adArray[i]=ad;
+                        baroArray[i]=baro;
+                        sicilArray[i]=sicil;
+                        tbbnoArray[i]=tbbno+"\n";
+                        x.add(tcArray[i]);
+                        x.add(adArray[i]);
+                        x.add(baroArray[i]);
+                        x.add(sicilArray[i]);
+                        x.add(tbbnoArray[i]);
+
                     response=x;
                 }
             }

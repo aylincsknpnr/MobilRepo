@@ -52,6 +52,7 @@ public class BuroAvukatFragment extends android.support.v4.app.Fragment {
 
             try{
                 ad=(TextView)v.findViewById(R.id.adsoyad);
+                img=(ImageView)v.findViewById(R.id.imageView);
                 try {
                     rslt = "START";
                     BuroAvukatCaller bac = new BuroAvukatCaller();
@@ -67,19 +68,10 @@ public class BuroAvukatFragment extends android.support.v4.app.Fragment {
                         }
                     }
                     System.out.println("Result:" + rslt);
-                    rslt=rslt.replace("[", " ").replace("]", " ");
-                    part=rslt.split("  ,  ");
-                    for (int i=0;i<part.length;i++){
+                   rslt=rslt.replace("[", " ").replace("]", " ");
+                    part=rslt.split("\n");
 
-                        data = new ArrayList<BuroAvModel>();
-                        data.add(new BuroAvModel(
-                             part[0].replace(";","\n")
-                        ));
-                        data.add(new BuroAvModel(
-                                part[1].replace(";","\n")
-                        ));
-                    }
-                     adapter = new BuroAvAdapter(data);
+                 adapter = new BuroAvAdapter(part);
                     recyclerView.setAdapter(adapter);
                 } catch (Exception ex) {
                     System.out.println(ex.toString());

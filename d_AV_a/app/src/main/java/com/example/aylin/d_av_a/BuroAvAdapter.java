@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class BuroAvAdapter extends RecyclerView.Adapter<BuroAvAdapter.MyViewHolder>{
 
-        private ArrayList<BuroAvModel> dataSet;
+         public String[] mDataset;
 
         public static class MyViewHolder extends RecyclerView.ViewHolder {
 
@@ -26,8 +26,8 @@ public class BuroAvAdapter extends RecyclerView.Adapter<BuroAvAdapter.MyViewHold
             }
         }
 
-        public BuroAvAdapter(ArrayList<BuroAvModel> data) {
-            this.dataSet = data;
+        public BuroAvAdapter( String[] mDataset) {
+            this.mDataset = mDataset;
         }
 
         @Override
@@ -42,14 +42,13 @@ public class BuroAvAdapter extends RecyclerView.Adapter<BuroAvAdapter.MyViewHold
 
         @Override
         public void onBindViewHolder(final MyViewHolder holder, final int listPosition) {
-
             TextView value = holder.value;
-            value.setText(dataSet.get(listPosition).getValue());
+            value.setText(mDataset[listPosition].toString().replace(",","\n"));
         }
 
         @Override
         public int getItemCount() {
-            return dataSet.size();
+            return (mDataset.length);
         }
     }
 
