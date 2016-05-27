@@ -56,6 +56,7 @@ public class CallSoap
                     PropertyInfo info = new PropertyInfo();
                     RepInfo.getPropertyInfo(i, info);
                     System.out.println("repp...." + RepInfo.getProperty(i).toString());
+                    System.out.println(primitive);
                     x.add(RepInfo.getProperty(i).toString());
 
                 }

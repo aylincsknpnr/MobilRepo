@@ -60,13 +60,37 @@ public class DavaSoap {
                     System.out.println(primitive);
                     SoapObject diffgram = (SoapObject) primitive.getProperty("diffgram");
                     SoapObject NewDataSet = (SoapObject) diffgram.getProperty("DocumentElement");
-                    SoapObject RepInfo = (SoapObject) NewDataSet.getProperty("DAVALARIM_Y");
-                    System.out.println(NewDataSet.getPropertyCount());
+                    String [] birimadiArray=new String[NewDataSet.getPropertyCount()+1];
+                    String [] tarihsaatArray=new String[NewDataSet.getPropertyCount()+1];
+                    String [] dosyanoArray=new String[NewDataSet.getPropertyCount()+1];
+                    String [] dosyaTurkodArray=new String[NewDataSet.getPropertyCount()+1];
+                    String [] DosyaVekilleriArray=new String[NewDataSet.getPropertyCount()+1];
+                    String [] DurumuArray=new String[NewDataSet.getPropertyCount()+1];
                     for (int i = 0; i < NewDataSet.getPropertyCount(); i++) {
+                        System.out.println("prim coun:"+primitive.getPropertyCount());
+                        System.out.println("dataset xount:"+ NewDataSet.getPropertyCount());
+                        SoapObject info=(SoapObject)NewDataSet.getProperty(i);
+                        System.out.println("info+"+info);
+                        String birimadi=info.getProperty("BirimAdi").toString();
+                        String tarihSaat=info.getProperty("TarihSaat").toString();
+                        String dosyaNo=info.getProperty("DosyaNo").toString();
+                        String dosyaTurKod=info.getProperty("DosyaTurKod").toString();
+                        String dosyaVekilleri=info.getProperty("DosyaVekilleri").toString();
+                        String durumu=info.getProperty("Durumu").toString();
 
-                        x.add(NewDataSet.getProperty(i).toString().replace("anyType"," ").replace("{", " ").replace("}", " "));
-                        System.out.println(x.get(0));
-                        System.out.println(x);
+                        birimadiArray[i]=birimadi;
+                        tarihsaatArray[i]=tarihSaat;
+                        dosyanoArray[i]=dosyaNo;
+                        dosyaTurkodArray[i]=dosyaTurKod;
+                        DosyaVekilleriArray[i]=dosyaVekilleri;
+                        DurumuArray[i]=durumu;
+                        x.add(birimadiArray[i]);
+                        x.add(tarihsaatArray[i]);
+                        x.add(dosyanoArray[i]);
+                        x.add(dosyaTurkodArray[i]);
+                        x.add(DosyaVekilleriArray[i]);
+                        x.add(DurumuArray[i]+"\n");
+
                         response=x;
                     }
                 }

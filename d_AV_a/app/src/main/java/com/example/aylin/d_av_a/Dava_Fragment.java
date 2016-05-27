@@ -1,41 +1,62 @@
 package com.example.aylin.d_av_a;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 /**
  * Created by aylin on 23.05.2016.
  */
 public class Dava_Fragment extends android.support.v4.app.Fragment {
-    EditText BirimAdi, TarihSaat, DosyaNo, DosyaTurKod, DosyaVekilleri, Durumu, YORA, DERECE;
     String[] part;
     String[] values;
+    String [] getValue;
+    public ArrayList<String> array=new ArrayList<String>();
+    UserInfoDatabaseHelper uidb;
     public static String rslt = "";
-
+    private static RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
+    private static RecyclerView recyclerView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.dava_fragment, container, false);
+        uidb=new UserInfoDatabaseHelper(getActivity());
+        recyclerView = (RecyclerView) v.findViewById(R.id.dava_recycler_view);
+        recyclerView.setHasFixedSize(true);
+
+        layoutManager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
         try {
-            BirimAdi = (EditText) v.findViewById(R.id.BirimAdi);
-            TarihSaat = (EditText) v.findViewById(R.id.TarihSaat);
-            DosyaNo = (EditText) v.findViewById(R.id.DosyaNo);
-            DosyaTurKod = (EditText) v.findViewById(R.id.DosyaTurKod);
-            DosyaVekilleri = (EditText) v.findViewById(R.id.DosyaVekilleri);
-            Durumu = (EditText) v.findViewById(R.id.Durumu);
-            YORA = (EditText) v.findViewById(R.id.YORA);
-            DERECE = (EditText) v.findViewById(R.id.DERECE);
+
             try {
+                //Veritabanı bilgi getirme
+                KayitGoster();
+
+                String listString = "";
+                for (String s : array)
+                {
+                    listString += s + "\t";
+                }
+                System.out.println(listString);
+                getValue=listString.split("  ");
                 rslt = "START";
                 DavalarCaller dc = new DavalarCaller();
-                dc.a = "15833927042";
+                dc.a = getValue[1];
                 dc.b = 0;
-                dc.c = 2;
+                dc.c = 2;//büro id işlenecek
                 dc.join();
                 dc.start();
                 while (rslt == "START") {
@@ -46,20 +67,12 @@ public class Dava_Fragment extends android.support.v4.app.Fragment {
                     }
                 }
                 System.out.println("Result:" + rslt);
-                rslt = rslt.replace("[", " ").replace("]", " ");
-                part = rslt.split("  ,  ");
-                for (int i = 0; i < part.length; i++) {
-                    values = part[0].split("; ");
-                }
-                BirimAdi.setText(values[1]);
-                TarihSaat.setText(values[2]);
-                DosyaNo.setText(values[3]);
-                DosyaTurKod.setText(values[4]);
-                DosyaVekilleri.setText(values[5]);
-                Durumu.setText(values[6]);
-                YORA.setText(values[7]);
-                DERECE.setText(values[1]);
-                Toast.makeText(getActivity().getApplicationContext(), values[0], Toast.LENGTH_SHORT).show();
+                rslt=rslt.replace("[", " ").replace("\n]", " ");
+                part=rslt.split("\n");
+                //Picasso.with(getActivity().getApplicationContext()).load("http://dmzws.barokart.com.tr/dmz.xml.info/TBB2Image.ashx?id=6&baroid="+sicil.getText().toString()+"&t=1").into(img);
+
+                adapter = new BuroAvAdapter(part);
+                recyclerView.setAdapter(adapter);
             } catch (Exception ex) {
                 System.out.println(ex.toString());
             }
@@ -68,5 +81,26 @@ public class Dava_Fragment extends android.support.v4.app.Fragment {
             Toast.makeText(getActivity().getApplicationContext(), "Başarısız Giriş", Toast.LENGTH_SHORT).show();
         }
         return v;
+
+    }
+    public void KayitGoster() {
+        SQLiteDatabase db = uidb.getReadableDatabase();
+        String selectQuery = "SELECT * FROM davaUserInfo";
+        Cursor c = db.rawQuery(selectQuery, null);
+        array.clear(); int id = 0;
+        String tc = "";
+        String avukat="";
+        String sicil="";
+        String tel="";
+        String gelen="";
+        while (c.moveToNext()) {
+            id = c.getInt(c.getColumnIndex("id"));
+            tc=c.getString(c.getColumnIndex("tc"));
+            avukat=c.getString(c.getColumnIndex("avukat"));
+            sicil=c.getString(c.getColumnIndex("sicil"));
+            tel=c.getString(c.getColumnIndex("tel"));
+            gelen+=id+" "+tc+" "+avukat+" "+sicil+" "+tel+"\n";
+            array.add(id+ " "+tc+ " "+avukat+ " "+sicil+ " "+tel);
+        }
     }
 }

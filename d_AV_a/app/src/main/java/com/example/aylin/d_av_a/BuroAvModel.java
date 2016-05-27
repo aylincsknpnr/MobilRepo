@@ -1,5 +1,6 @@
 package com.example.aylin.d_av_a;
 
+import android.media.Image;
 import android.widget.ImageView;
 
 /**
@@ -7,12 +8,14 @@ import android.widget.ImageView;
  */
 public class BuroAvModel {
         public String value;
-        public BuroAvModel( String value) {
-            this.value = value;
+    public String image;
+        public BuroAvModel( String value,String image) {
+            this.value = value; this.image=image;
         }
         public BuroAvModel() {
         }
        public String getValue(){
         return value;
     }
+        public String getImage(){return image;}
 }

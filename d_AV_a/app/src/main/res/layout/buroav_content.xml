@@ -36,6 +36,14 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:text=""
+            android:textSize="6pt"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+        <TextView
+            android:id="@+id/sicil"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="Ad Soyad"
             android:textSize="6pt"
             android:textAppearance="?android:attr/textAppearanceMedium"/>

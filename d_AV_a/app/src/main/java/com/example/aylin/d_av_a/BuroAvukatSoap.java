@@ -53,6 +53,7 @@ public class BuroAvukatSoap {
 
             ArrayList<String> x=new ArrayList<String>();
             SoapObject primitive= (SoapObject) envelope.getResponse();
+            BuroAvukatFragment baf=new BuroAvukatFragment();
             if  (primitive != null) {
                 System.out.println(primitive);
                 SoapObject diffgram = (SoapObject) primitive.getProperty("diffgram");
@@ -73,17 +74,17 @@ public class BuroAvukatSoap {
                         String baro=info.getProperty("Baro").toString();
                         String sicil=info.getProperty("BaroSicilNo").toString();
                         String tbbno=info.getProperty("CepTel").toString();
-
+                      //  baf.sicil.setText(sicil);
                         tcArray[i]=tc;
                         adArray[i]=ad;
                         baroArray[i]=baro;
                         sicilArray[i]=sicil;
-                        tbbnoArray[i]=tbbno+"\n";
+                        tbbnoArray[i]=tbbno;
                         x.add(tcArray[i]);
                         x.add(adArray[i]);
                         x.add(baroArray[i]);
                         x.add(sicilArray[i]);
-                        x.add(tbbnoArray[i]);
+                        x.add(tbbnoArray[i]+"\n");
 
                     response=x;
                 }
