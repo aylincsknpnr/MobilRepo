@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 /**
  * Created by aylin on 23.05.2016.
  */
-public class BuroDava_Fragment extends android.support.v4.app.Fragment {
+public class BuroDava_Fragment extends android.support.v4.app.Fragment{
     public ArrayList<String> array=new ArrayList<String>();
     public String[] getValue;
     UserInfoDatabaseHelper uidb;

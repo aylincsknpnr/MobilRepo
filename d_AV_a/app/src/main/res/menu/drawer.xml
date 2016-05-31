@@ -3,6 +3,11 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/main"
+            android:checked="false"
+            android:icon="@drawable/ic_inbox_black"
+            android:title="Ajandam" />
+        <item
             android:id="@+id/starred"
             android:checked="false"
             android:icon="@drawable/ic_star_black"

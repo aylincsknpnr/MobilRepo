@@ -64,6 +64,10 @@ public class MainActivity extends AppCompatActivity {
             result=listString.split("  ");
             drawerUsername.setText(result[2]);
             drawerAccount.setText(result[3]);
+            MainFragment mainFragment = new MainFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction214 = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction214.replace(R.id.frame, mainFragment);
+            fragmentTransaction214.commit();
             Picasso.with(this).load("http://dmzws.barokart.com.tr/dmz.xml.info/TBB2Image.ashx?id=6&baroid="+result[3].replace(" ", "")+"&t=1").into(profile);
         } else {//giriş yapmamış ise login sayfasına yönlenecek
             drawerUsername.setText("Unknown Username");
@@ -94,6 +98,12 @@ public class MainActivity extends AppCompatActivity {
 
                 //Check to see which item was being clicked and perform appropriate action
                 switch (menuItem.getItemId()) {
+                    case R.id.main:
+                        MainFragment mainFragment = new MainFragment();
+                        android.support.v4.app.FragmentTransaction fragmentTransaction214 = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction214.replace(R.id.frame, mainFragment);
+                        fragmentTransaction214.commit();
+                        return true;
 
                     case R.id.inbox:
                         Buro_Fragment buro_fragment = new Buro_Fragment();
