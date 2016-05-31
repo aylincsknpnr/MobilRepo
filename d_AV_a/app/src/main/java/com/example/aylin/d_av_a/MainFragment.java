@@ -397,7 +397,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         private void setCurrentDayOfMonth(int currentDayOfMonth) {
             this.currentDayOfMonth = currentDayOfMonth;
         }
-
         public void setCurrentWeekDay(int currentWeekDay) {
             this.currentWeekDay = currentWeekDay;
         }
@@ -407,4 +406,3 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         }
     }
 }
-
