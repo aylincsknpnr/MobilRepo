@@ -33,6 +33,7 @@
             android:checked="false"
             android:icon="@drawable/ic_drafts_black"
             android:title="Davalarım" />
+
         <item
             android:id="@+id/allmail"
             android:checked="false"

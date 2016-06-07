@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    tools:context=".Login.MainActivity">
 
     <LinearLayout
         android:layout_height="match_parent"
@@ -20,7 +20,15 @@
             android:id="@+id/frame"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
+            <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/bottom_container"
+                android:layout_below="@id/title"
+                android:fillViewport="false"
+                android:orientation="vertical"
+                android:padding="10dp">
+                </ScrollView>
         </FrameLayout>
 
     </LinearLayout>

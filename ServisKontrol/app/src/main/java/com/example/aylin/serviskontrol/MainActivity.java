@@ -26,11 +26,13 @@ public class MainActivity extends Activity {
                 {
                     EditText ed1=(EditText)findViewById(R.id.editText1);
                     EditText ed2=(EditText)findViewById(R.id.editText2);
-                    String a=ed1.getText().toString();
+                    EditText ed3=(EditText)findViewById(R.id.editText3);
+                    int a=Integer.parseInt(ed1.getText().toString());
                     String b=ed2.getText().toString();
+                    int ce=Integer.parseInt(ed3.getText().toString());
                     rslt="START";
                     Caller c=new Caller(); c.a=a;
-                    c.b=b;
+                    c.b=b;c.c=ce;
                     c.join(); c.start();
                     while(rslt=="START") {
                         try {

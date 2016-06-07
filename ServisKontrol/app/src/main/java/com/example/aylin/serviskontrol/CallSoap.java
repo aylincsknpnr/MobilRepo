@@ -13,9 +13,9 @@ import java.util.ArrayList;
 
 public class CallSoap
 {
-    public final String SOAP_ACTION2 = "http://tempuri.org/Get_Davalarim_Y";
+    public final String SOAP_ACTION2 = "http://tempuri.org/Get_BuroDavalarim_SAYILAR_Y";
 
-    public  final String OPERATION_NAME2 = "Get_Davalarim_Y";
+    public  final String OPERATION_NAME2 = "Get_BuroDavalarim_SAYILAR_Y";
 
     public  final String WSDL_TARGET_NAMESPACE2 = "http://tempuri.org/";
 
@@ -23,20 +23,29 @@ public class CallSoap
     public CallSoap()
     {
     }
-    public String Call(String a,String b)
+    public String Call(int a, String b, int c)
     {
         SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE2,OPERATION_NAME2);
 
-        PropertyInfo pi2=new PropertyInfo();
-        pi2.setName("avukattc");
+        PropertyInfo pi2 = new PropertyInfo();
+        pi2 = new PropertyInfo();
+        pi2.setName("buroid");
         pi2.setValue(a);
-        pi2.setType(String.class);
+        pi2.setType(int.class);
         request.addProperty(pi2);
-        pi2=new PropertyInfo();
-        pi2.setName("tarih");
+
+        pi2 = new PropertyInfo();
+        pi2.setName("avukattc");
         pi2.setValue(b);
         pi2.setType(String.class);
         request.addProperty(pi2);
+
+        pi2 = new PropertyInfo();
+        pi2.setName("istektip");
+        pi2.setValue(c);
+        pi2.setType(int.class);
+        request.addProperty(pi2);
+
 
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
                 SoapEnvelope.VER11);
@@ -57,18 +66,27 @@ public class CallSoap
 
                 SoapObject diffgram = (SoapObject) primitive.getProperty("diffgram");
                 SoapObject NewDataSet = (SoapObject) diffgram.getProperty("DocumentElement");
-                SoapObject RepInfo = (SoapObject) NewDataSet.getProperty("DAVALARIM_Y");
+                //SoapObject RepInfo = (SoapObject) NewDataSet.getProperty("DAVALARIM_Y");
+                String [] countArray=new String[NewDataSet.getPropertyCount()+1];
+                String [] tariharray=new String[NewDataSet.getPropertyCount()+1];
+                String [] tipArray =new String[NewDataSet.getPropertyCount()+1];
                 for (int i = 0; i < NewDataSet.getPropertyCount(); i++) {
-                    PropertyInfo info = new PropertyInfo();
-                    NewDataSet.getPropertyInfo(i, info);
-                    System.out.println("dataset...." + NewDataSet.getProperty(i).toString());
+                    SoapObject info=(SoapObject)NewDataSet.getProperty(i);
+                    System.out.println("info+" + info);
+                    String count=info.getProperty("Expr1").toString();
+                    String tarihSaat=info.getProperty("Column1").toString();
+                    String tip=info.getProperty("Column2").toString();
 
-                    x.add(NewDataSet.getProperty(i).toString());
+                    countArray[i]=count;
+                    tariharray[i]=tarihSaat;
+                    tipArray[i]=tip;
 
+                    x.add(countArray[i]);
+                    x.add(tariharray[i]);
+                    x.add(tipArray[i]+"\n");
                 }
                 response=x;
             }
-
         }
         catch (Exception exception)
         {
