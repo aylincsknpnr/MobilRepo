@@ -12,6 +12,9 @@ import java.util.ArrayList;
  * Created by aylin on 23.05.2016.
  */
 public class DavaSoap {
+        public static String [] birim;
+        public static String [] date;
+        public static String [] dosyaN;
         public String val1,val2,val3,val4,val5,val6,val7,val8,val9,val10,val11;
         public final String SOAP_ACTION2 = "http://tempuri.org/Get_BuroDavalarim_Y";
 
@@ -90,7 +93,9 @@ public class DavaSoap {
                         x.add(dosyaTurkodArray[i]);
                         x.add(DosyaVekilleriArray[i]);
                         x.add(DurumuArray[i]+"\n");
-
+                        birim=birimadiArray;
+                        date=tarihsaatArray;
+                        dosyaN=dosyanoArray;
                         response=x;
                     }
                 }
@@ -102,4 +107,13 @@ public class DavaSoap {
             }
             return response.toString();
         }
+    public String [] returnBirim(){
+        return birim;
+    }
+    public String [] returnDate(){
+        return date;
+    }
+    public String [] returnDosyaN(){
+        return dosyaN;
+    }
     }

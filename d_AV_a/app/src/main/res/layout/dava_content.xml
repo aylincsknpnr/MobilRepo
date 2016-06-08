@@ -4,6 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:tag="cards main container">
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layer_card_background"
+        >
         <TableLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -20,8 +25,45 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:src="@drawable/dava" />
+                </TableRow>
+            </TableLayout>
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layer_card_background"
+        >
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                >
                 <TextView
-                    android:id="@+id/dava"
+                    android:id="@+id/birim"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text=""
+                    android:textSize="6pt"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text=""
+                    android:textSize="6pt"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:id="@+id/dosyano"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -30,4 +72,5 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"/>
             </TableRow>
         </TableLayout>
+    </TableLayout>
 </LinearLayout>

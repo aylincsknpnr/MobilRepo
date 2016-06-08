@@ -22,7 +22,9 @@ import java.util.ArrayList;
  * Created by aylin on 23.05.2016.
  */
 public class Dava_Fragment extends android.support.v4.app.Fragment implements ClickListener {
-    String[] part;
+    String[] part1;
+    String[] part2;
+    String[] part3;
     String[] values;
     String [] getValue;
     public ArrayList<String> array=new ArrayList<String>();
@@ -31,6 +33,7 @@ public class Dava_Fragment extends android.support.v4.app.Fragment implements Cl
     private static DavaAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private static RecyclerView recyclerView;
+    DavaSoap ds;
   //  static View.OnClickListener myOnClickListener;
     @Nullable
     @Override
@@ -42,7 +45,7 @@ public class Dava_Fragment extends android.support.v4.app.Fragment implements Cl
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-
+        ds=new DavaSoap();
         try {
 
             try {
@@ -70,12 +73,14 @@ public class Dava_Fragment extends android.support.v4.app.Fragment implements Cl
                         ex.printStackTrace();
                     }
                 }
-                System.out.println("Result:" + rslt);
+               /* System.out.println("Result:" + rslt);
                 rslt=rslt.replace("[", " ").replace("\n]", " ");
-                part=rslt.split("\n");
+                part=rslt.split("\n");*/
                 //Picasso.with(getActivity().getApplicationContext()).load("http://dmzws.barokart.com.tr/dmz.xml.info/TBB2Image.ashx?id=6&baroid="+sicil.getText().toString()+"&t=1").into(img);
-
-                adapter = new DavaAdapter(part);
+                part1=ds.returnBirim();
+                part2=ds.returnDate();
+                part3=ds.returnDosyaN();
+                adapter = new DavaAdapter(part1,part2,part3);
                 recyclerView.setAdapter(adapter);
                 adapter.setClickListener(this);
             } catch (Exception ex) {
@@ -112,10 +117,11 @@ public class Dava_Fragment extends android.support.v4.app.Fragment implements Cl
     public void itemClicked(View view, int position) {
         System.out.println("tik:" + position);
         startActivity(new Intent("android.intent.action.SECOND"));
-/*
-        Intent intent = new Intent(getActivity(), SecondActivity.class);
-        intent.putExtra("ItemPosition",position);
 
-        startActivity(intent);*/
+        Intent intent = new Intent(getActivity(), DavaTabActivity.class);
+        intent.putExtra("birim",ds.returnBirim()[position]);
+        intent.putExtra("date",ds.returnDate()[position]);
+        intent.putExtra("dosyaN",ds.returnDosyaN()[position]);
+        startActivity(intent);
     }
 }

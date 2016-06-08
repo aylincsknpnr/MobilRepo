@@ -14,16 +14,20 @@ import com.example.aylin.d_av_a.R;
  */
 public class DavaAdapter extends RecyclerView.Adapter<DavaAdapter.MyViewHolder>{
     public static ClickListener clicklistener = null;
-        public String[] mDataset;
+         public String[] mDataset1;
+         public String[] mDataset2;
+         public String[] mDataset3;
       public static   Context context;
         public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-            TextView dava;
+            TextView birim,date,dosyaN;
 
             public MyViewHolder(View itemView) {
                 super(itemView);
                 itemView.setOnClickListener(this);
-                this.dava = (TextView) itemView.findViewById(R.id.dava);
+                this.birim = (TextView) itemView.findViewById(R.id.birim);
+                this.date=(TextView)itemView.findViewById(R.id.date);
+                this.dosyaN=(TextView)itemView.findViewById(R.id.dosyano);
 
             }
             @Override
@@ -34,8 +38,10 @@ public class DavaAdapter extends RecyclerView.Adapter<DavaAdapter.MyViewHolder>{
             }
         }
 
-        public DavaAdapter( String[] mDataset) {
-            this.mDataset = mDataset;
+        public DavaAdapter( String[] mDataset1, String[] mDataset2, String[] mDataset3) {
+            this.mDataset1 = mDataset1;
+            this.mDataset2 = mDataset2;
+            this.mDataset3 = mDataset3;
         }
 
         @Override
@@ -54,13 +60,18 @@ public class DavaAdapter extends RecyclerView.Adapter<DavaAdapter.MyViewHolder>{
     }
         @Override
         public void onBindViewHolder(final MyViewHolder holder, final int listPosition) {
-            TextView dava = holder.dava;
-            dava.setText(mDataset[listPosition].toString().replace(",","\n").replace("#","\n"));
+            TextView birim = holder.birim;
+            TextView date = holder.date;
+            TextView dosyaN = holder.dosyaN;
+            birim.setText(mDataset1[listPosition]);
+            date.setText(mDataset2[listPosition]);
+            dosyaN.setText(mDataset3[listPosition]);
+                    //.toString().replace(",","\n").replace("#","\n"));
         }
 
         @Override
         public int getItemCount() {
-            return (mDataset.length);
+            return (mDataset1.length);
         }
 
     }

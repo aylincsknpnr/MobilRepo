@@ -1,4 +1,5 @@
 package com.example.aylin.d_av_a.Dava;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -7,6 +8,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.TextView;
 
 import com.example.aylin.d_av_a.R;
 
@@ -18,14 +20,14 @@ public class DavaTabActivity  extends AppCompatActivity {
     ViewPager pager;
     TabLayout tabLayout;
     PagerAdapter adapter;
-
+    DavaSoap ds;
+    TextView mahkeme,tarih,dosyano;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dava_tab);
         appbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(appbar);
-
 
         pager = (ViewPager) findViewById(R.id.view_pager);
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
@@ -39,6 +41,20 @@ public class DavaTabActivity  extends AppCompatActivity {
         pager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
         tabLayout.setTabsFromPagerAdapter(adapter);
+        ds=new DavaSoap();
+
+        Intent intent = getIntent();
+        String birim = intent.getStringExtra("birim");
+        String date = intent.getStringExtra("date");
+        String dosyaN = intent.getStringExtra("dosyaN");
+
+        mahkeme=(TextView)findViewById(R.id.title_mahkad);
+        tarih=(TextView)findViewById(R.id.title_tarih);
+        dosyano=(TextView)findViewById(R.id.title_dosyano);
+
+        mahkeme.setText(birim);
+        tarih.setText(date);
+        dosyano.setText(dosyaN);
     }
 
     public static class PagerAdapter extends FragmentPagerAdapter {

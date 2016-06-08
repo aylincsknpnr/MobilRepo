@@ -128,14 +128,8 @@ public class CalendarAdapter extends BaseAdapter {
 		}
 		ImageView iw;
 		// show icon if date is not empty and it exists in the items array
-		System.out.println(cs.returnTip()[0]+"ndfkmnskşlkş");
-		if (Integer.parseInt(cs.returnTip()[0])==0){
-			 iw = (ImageView) v.findViewById(R.id.date_icon);
-		}
-		else{
+		//System.out.println(cs.returnTip()[0]+"ndfkmnskşlkş");
 			 iw = (ImageView) v.findViewById(R.id.date_icon2);
-		}
-
 		//TextView twe=(TextView)v.findViewById(R.id.count);
 		//twe.setText("*");
 		if (date.length() > 0 && items != null && items.contains(date)) {
