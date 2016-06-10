@@ -68,13 +68,13 @@ public class DavaTabActivity  extends AppCompatActivity {
             Fragment frag = null;
             switch (position) {
                 case 0:
-                    frag = new GameFragment();
+                    frag = new TaraflarFragment();
                     break;
                 case 1:
-                    frag = new MovieFragment();
+                    frag = new KasaFragment();
                     break;
                 case 2:
-                    frag = new StudyFragment();
+                    frag = new DigerFragment();
                     break;
             }
             return frag;

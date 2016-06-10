@@ -6,13 +6,13 @@ package com.example.aylin.serviskontrol;
 public class Caller  extends Thread
 {
     public CallSoap cs;
-    public int  a,c;
+    public int  a,c,f;
     public String b;
-
+    public long d,e;
     public void run(){
         try{
             cs=new CallSoap();
-            String resp=cs.Call(a, b, c);
+            String resp=cs.Call(a, b, c, d, e, f);
             MainActivity.rslt=resp;
         }catch(Exception ex)
         {MainActivity.rslt=ex.toString();}

@@ -13,9 +13,9 @@ import java.util.ArrayList;
 
 public class CallSoap
 {
-    public final String SOAP_ACTION2 = "http://tempuri.org/Get_BuroDavalarim_SAYILAR_Y";
+    public final String SOAP_ACTION2 = "http://tempuri.org/Get_BuroDavalarim_KASA_Y";
 
-    public  final String OPERATION_NAME2 = "Get_BuroDavalarim_SAYILAR_Y";
+    public  final String OPERATION_NAME2 = "Get_BuroDavalarim_KASA_Y";
 
     public  final String WSDL_TARGET_NAMESPACE2 = "http://tempuri.org/";
 
@@ -23,7 +23,7 @@ public class CallSoap
     public CallSoap()
     {
     }
-    public String Call(int a, String b, int c)
+    public String Call(int a, String b, int c, long d, long e, int f)
     {
         SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE2,OPERATION_NAME2);
 
@@ -46,6 +46,23 @@ public class CallSoap
         pi2.setType(int.class);
         request.addProperty(pi2);
 
+        pi2 = new PropertyInfo();
+        pi2.setName("durusmaid");
+        pi2.setValue(d);
+        pi2.setType(long.class);
+        request.addProperty(pi2);
+
+        pi2 = new PropertyInfo();
+        pi2.setName("birimid");
+        pi2.setValue(e);
+        pi2.setType(long.class);
+        request.addProperty(pi2);
+
+        pi2 = new PropertyInfo();
+        pi2.setName("islemtip");
+        pi2.setValue(f);
+        pi2.setType(int.class);
+        request.addProperty(pi2);
 
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
                 SoapEnvelope.VER11);
@@ -64,7 +81,7 @@ public class CallSoap
             if  (primitive != null) {
                 System.out.println(primitive);
 
-                SoapObject diffgram = (SoapObject) primitive.getProperty("diffgram");
+              /*  SoapObject diffgram = (SoapObject) primitive.getProperty("diffgram");
                 SoapObject NewDataSet = (SoapObject) diffgram.getProperty("DocumentElement");
                 //SoapObject RepInfo = (SoapObject) NewDataSet.getProperty("DAVALARIM_Y");
                 String [] countArray=new String[NewDataSet.getPropertyCount()+1];
@@ -84,8 +101,8 @@ public class CallSoap
                     x.add(countArray[i]);
                     x.add(tariharray[i]);
                     x.add(tipArray[i]+"\n");
-                }
-                response=x;
+                }*/
+                response="x";
             }
         }
         catch (Exception exception)
@@ -95,7 +112,6 @@ public class CallSoap
         }
         return response.toString();
     }
-
 
 }
 

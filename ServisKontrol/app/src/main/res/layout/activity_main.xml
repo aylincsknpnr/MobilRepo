@@ -23,6 +23,18 @@
         android:id="@+id/editText3"
         android:layout_width="232dp"
         android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="232dp"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="232dp"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="232dp"
+        android:layout_height="wrap_content" />
     <Button
         android:id="@+id/button1"
         android:layout_width="229dp"

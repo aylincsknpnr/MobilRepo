@@ -16,7 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.aylin.d_av_a.Ajanda.MainFragment;
+//import com.example.aylin.d_av_a.Ajanda.MainFragment;
 import com.example.aylin.d_av_a.Buro.Buro_Fragment;
 import com.example.aylin.d_av_a.BuroAvukat.BuroAvukatFragment;
 import com.example.aylin.d_av_a.BuroDava.BuroDava_Fragment;
@@ -107,13 +107,13 @@ public class MainActivity extends AppCompatActivity {
 
                 //Check to see which item was being clicked and perform appropriate action
                 switch (menuItem.getItemId()) {
-                    case R.id.main:
+               /* case R.id.main:
                         MainFragment mainFragment = new MainFragment();
                         android.support.v4.app.FragmentTransaction fragmentTransaction214 = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction214.replace(R.id.frame, mainFragment);
                         fragmentTransaction214.commit();
                         return true;
-
+*/
                     case R.id.inbox:
                         Buro_Fragment buro_fragment = new Buro_Fragment();
                         android.support.v4.app.FragmentTransaction fragmentTransaction21 = getSupportFragmentManager().beginTransaction();
