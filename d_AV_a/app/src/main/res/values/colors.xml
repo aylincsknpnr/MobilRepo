@@ -23,5 +23,6 @@
     <color name="orrange">#e33d1b</color>
     <color name="darkorrange">#cc2303</color>
     <color name="textColorPrimary">#FFFFFF</color>
+    <color name="good">#00897B</color>
 
 </resources>
