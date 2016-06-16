@@ -8,6 +8,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.widget.TextView;
 
 import com.example.aylin.d_av_a.R;
@@ -76,13 +77,19 @@ public class DavaTabActivity  extends AppCompatActivity {
                 case 2:
                     frag = new DigerFragment();
                     break;
+                case 3:
+                    frag = new DigerFragment1();
+                    break;
+                case 4:
+                    frag = new DigerFragment2();
+                    break;
             }
             return frag;
         }
 
         @Override
         public int getCount() {
-            return 3;
+            return 5;
         }
 
         @Override
@@ -90,17 +97,23 @@ public class DavaTabActivity  extends AppCompatActivity {
             String title = " ";
             switch (position) {
                 case 0:
-                    title = "TARAFLAR";
+                    title = "<small>TARAFLAR</small>";
                     break;
                 case 1:
-                    title = "KASA";
+                    title = "<small>KASA</small>";
                     break;
                 case 2:
-                    title = "DİĞER";
+                    title = "<small>DİĞER</small>";
+                    break;
+                case 3:
+                    title = "<small>DİĞER1</small>";
+                    break;
+                case 4:
+                    title = "<small>DİĞER2</small>";
                     break;
             }
 
-            return title;
+            return Html.fromHtml(title);
         }
 
     }

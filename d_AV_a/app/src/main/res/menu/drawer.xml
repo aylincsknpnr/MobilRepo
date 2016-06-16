@@ -8,6 +8,11 @@
             android:icon="@drawable/ic_inbox_black"
             android:title="Ajandam" />
         <item
+            android:id="@+id/duyuru"
+            android:checked="false"
+            android:icon="@drawable/ic_send_black"
+            android:title="Duyurular" />
+        <item
             android:id="@+id/starred"
             android:checked="false"
             android:icon="@drawable/ic_star_black"
@@ -33,7 +38,11 @@
             android:checked="false"
             android:icon="@drawable/ic_drafts_black"
             android:title="Davalarım" />
-
+        <item
+            android:id="@+id/ana"
+            android:checked="false"
+            android:icon="@drawable/ic_drafts_black"
+            android:title="AnaSayfa" />
         <item
             android:id="@+id/allmail"
             android:checked="false"
