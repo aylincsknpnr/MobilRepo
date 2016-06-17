@@ -26,4 +26,7 @@
     <color name="good2">#00897B</color>
     <color name="good">#FF5722</color>
     <color name="trans">#00000000 </color>
+    <color name="goodsoft">#FF8A65</color>
+    <color name="gs">#FF6E40</color>
+    <color name="yellow">#FFFF00</color>
 </resources>

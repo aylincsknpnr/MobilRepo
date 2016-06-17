@@ -10,6 +10,10 @@ import android.widget.TextView;
 import com.example.aylin.d_av_a.Dava.ClickListener;
 import com.example.aylin.d_av_a.R;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by aylin on 15.06.2016.
  */
@@ -27,7 +31,7 @@ public class DuyuruAdapter extends RecyclerView.Adapter<DuyuruAdapter.MyViewHold
                 super(itemView);
                 itemView.setOnClickListener(this);
                 this.baslik = (TextView) itemView.findViewById(R.id.baslik);
-                this.date=(TextView)itemView.findViewById(R.id.d_date);
+               this.date=(TextView)itemView.findViewById(R.id.d_date);
                 this.detay=(TextView)itemView.findViewById(R.id.detay);
                 detay.setVisibility(View.GONE);
             }
@@ -35,7 +39,7 @@ public class DuyuruAdapter extends RecyclerView.Adapter<DuyuruAdapter.MyViewHold
             public void onClick(View v) {
                 if (clicklistener != null) {
                     clicklistener.itemClicked(v, getAdapterPosition());
-                    if(sayac%2==0) {
+                    if(sayac%2!=0) {
                         detay.setVisibility(View.GONE);
                     }
                     else {
@@ -69,10 +73,10 @@ public class DuyuruAdapter extends RecyclerView.Adapter<DuyuruAdapter.MyViewHold
         @Override
         public void onBindViewHolder(final MyViewHolder holder, final int listPosition) {
             TextView baslik = holder.baslik;
-            TextView date = holder.date;
+          TextView date = holder.date;
             TextView detay = holder.detay;
             baslik.setText(mDataset_1[listPosition]);
-            date.setText(mDataset_2[listPosition]);
+           date.setText(mDataset_2[listPosition]);
             detay.setText(mDataset_3[listPosition]);
         }
 
