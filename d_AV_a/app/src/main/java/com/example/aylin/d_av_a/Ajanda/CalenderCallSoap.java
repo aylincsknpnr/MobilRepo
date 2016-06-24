@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class CalenderCallSoap {
     public static String [] count;
     public static String [] tip2;
+    public static String [] datem;
     public final String SOAP_ACTION2 = "http://tempuri.org/Get_BuroDavalarim_SAYILAR_Y";
 
     public  final String OPERATION_NAME2 = "Get_BuroDavalarim_SAYILAR_Y";
@@ -86,7 +87,7 @@ public class CalenderCallSoap {
                 }
                 count=countArray;
                 tip2=tipArray;
-
+                datem=tariharray;
                 response=x;
             }
         }
@@ -103,4 +104,5 @@ public class CalenderCallSoap {
     public String [] returnTip(){
         return tip2;
     }
+    public String [] returnTarihim(){return datem;}
 }

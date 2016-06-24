@@ -24,6 +24,7 @@ import com.example.aylin.d_av_a.BuroAvukat.BuroAvukatFragment;
 import com.example.aylin.d_av_a.BuroDava.BuroDava_Fragment;
 import com.example.aylin.d_av_a.Dava.Dava_Fragment;
 import com.example.aylin.d_av_a.Duyuru.DuyuruFragment;
+import com.example.aylin.d_av_a.QR.QrFragment;
 import com.example.aylin.d_av_a.R;
 import com.example.aylin.d_av_a.User.First_Fragment;
 import com.example.aylin.d_av_a.User.UserInfoDatabaseHelper;
@@ -161,6 +162,12 @@ public class MainActivity extends AppCompatActivity {
                         android.support.v4.app.FragmentTransaction fragmentTransactionana = getSupportFragmentManager().beginTransaction();
                         fragmentTransactionana.replace(R.id.frame, contentFragment);
                         fragmentTransactionana.commit();
+                        return true;
+                    case R.id.qr:
+                        QrFragment qrFragment = new QrFragment();
+                        android.support.v4.app.FragmentTransaction fragmentTransactionqr = getSupportFragmentManager().beginTransaction();
+                        fragmentTransactionqr.replace(R.id.frame, qrFragment);
+                        fragmentTransactionqr.commit();
                         return true;
                     case R.id.allmail:
                         drawerUsername.setText("Unknown Username");

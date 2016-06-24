@@ -41,7 +41,6 @@ public class CalendarAdapter extends BaseAdapter {
 	private List<String> items;
 	public static List<String> dayString;
 	private View previousView;
-
 	public CalendarAdapter(Context c, GregorianCalendar monthCalendar) {
 		cs=new CalenderCallSoap();
 		CalendarAdapter.dayString = new ArrayList<String>();
@@ -86,7 +85,6 @@ public class CalendarAdapter extends BaseAdapter {
 			LayoutInflater vi = (LayoutInflater) mContext
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			v = vi.inflate(R.layout.calendar_item, null);
-
 		}
 		dayView = (TextView) v.findViewById(R.id.date);
 		// separates daystring into parts.
@@ -106,6 +104,7 @@ public class CalendarAdapter extends BaseAdapter {
 		} else {
 			// setting curent month's days in blue color.
 			dayView.setTextColor(Color.BLUE);
+
 		}
 
 		if (dayString.get(position).equals(curentDateString)) {
@@ -134,6 +133,7 @@ public class CalendarAdapter extends BaseAdapter {
 		//twe.setText("*");
 		if (date.length() > 0 && items != null && items.contains(date)) {
 			iw.setVisibility(View.VISIBLE);
+
 		} else {
 			iw.setVisibility(View.INVISIBLE);
 		}
@@ -145,7 +145,7 @@ public class CalendarAdapter extends BaseAdapter {
 			previousView.setBackgroundResource(R.drawable.list_item_background);
 		}
 		previousView = view;
-		view.setBackgroundResource(R.drawable.calendar_cel_selectl);
+		view.setBackgroundResource(R.color.good);
 		return view;
 	}
 

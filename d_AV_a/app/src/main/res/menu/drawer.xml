@@ -44,6 +44,11 @@
             android:icon="@drawable/ic_drafts_black"
             android:title="AnaSayfa" />
         <item
+            android:id="@+id/qr"
+            android:checked="false"
+            android:icon="@drawable/ic_drafts_black"
+            android:title="Qr OKUYUCU" />
+        <item
             android:id="@+id/allmail"
             android:checked="false"
             android:icon="@drawable/ic_email_black"

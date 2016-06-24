@@ -20,6 +20,7 @@ public class HomeSoap {
         public static String [] a_icon;
         public static String [] a_durum;
         public static String [] a_kim;
+        public static String [] a_hour;
         public String val1,val2,val3,val4,val5,val6,val7,val8,val9,val10,val11;
         public final String SOAP_ACTION2 = "http://tempuri.org/Get_AnaSayfaBildirim_Listesi";
 
@@ -72,7 +73,7 @@ public class HomeSoap {
                     String [] DurumArray=new String[NewDataSet.getPropertyCount()+1];
                     String [] IconArray=new String[NewDataSet.getPropertyCount()+1];
                     String [] KimArray=new String[NewDataSet.getPropertyCount()+1];
-
+                    String [] SaatArray=new String[NewDataSet.getPropertyCount()+1];
                     for (int i = 0; i < NewDataSet.getPropertyCount(); i++) {
                         System.out.println("prim coun:"+primitive.getPropertyCount());
                         System.out.println("dataset xount:"+ NewDataSet.getPropertyCount());
@@ -80,12 +81,13 @@ public class HomeSoap {
                         System.out.println("info+"+info);
                         String ıd=info.getProperty("id").toString();
                         String baslik=info.getProperty("konubaslik").toString();
-                        String tarih=info.getProperty("tarihsaat").toString();
+                         String tarih=info.getProperty("tarih").toString();
                         String detay=info.getProperty("konudetay").toString();
                         String tur=info.getProperty("konutur").toString();
                         String icon=info.getProperty("icon").toString();
                         String durum=info.getProperty("durum").toString();
                         String kim=info.getProperty("konukimler").toString();
+                        String saat=info.getProperty("saat").toString();
 
                         IdArray[i]=ıd;
                         BaslikArray[i]=baslik;
@@ -95,6 +97,7 @@ public class HomeSoap {
                         IconArray[i]=icon;
                         DurumArray[i]=durum;
                         KimArray[i]=kim;
+                        SaatArray[i]=saat;
 
                         x.add(IdArray[i]);
                         x.add(BaslikArray[i]);
@@ -104,6 +107,7 @@ public class HomeSoap {
                         x.add(IconArray[i]);
                         x.add(DurumArray[i]);
                         x.add(KimArray[i]);
+                        x.add(SaatArray[i]);
 
                         a_baslik=BaslikArray;
                         a_date=TarihArray;
@@ -112,6 +116,7 @@ public class HomeSoap {
                         a_icon=IconArray;
                         a_durum=DurumArray;
                         a_kim=KimArray;
+                        a_hour=SaatArray;
                        // response=x;
                     }
                 }
@@ -145,6 +150,9 @@ public class HomeSoap {
     }
     public String [] returnKim(){
         return a_kim;
+    }
+    public String [] returnSaat(){
+        return a_hour;
     }
     }
 
