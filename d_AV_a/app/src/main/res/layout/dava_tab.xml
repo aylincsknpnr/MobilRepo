@@ -146,9 +146,21 @@
             android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-
+        <FrameLayout
+            android:id="@+id/frame2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/bottom_container2"
+                android:layout_below="@id/title"
+                android:fillViewport="false"
+                android:orientation="vertical"
+                android:padding="10dp">
+            </ScrollView>
+        </FrameLayout>
     </android.support.design.widget.AppBarLayout>
-
 
 </android.support.design.widget.CoordinatorLayout>
 

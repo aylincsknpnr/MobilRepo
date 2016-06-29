@@ -30,7 +30,6 @@
                 android:padding="10dp">
                 </ScrollView>
         </FrameLayout>
-
     </LinearLayout>
 
     <android.support.design.widget.NavigationView

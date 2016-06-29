@@ -17,5 +17,4 @@
         android:clickable="true"
         android:focusable="true"
         />
-
 </LinearLayout>
