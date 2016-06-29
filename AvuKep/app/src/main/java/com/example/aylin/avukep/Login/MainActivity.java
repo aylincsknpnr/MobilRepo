@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.example.aylin.avukep.Buro.Buro_Fragment;
 import com.example.aylin.avukep.BuroAvukat.BuroAvukatFragment;
 
+import com.example.aylin.avukep.Kep.KepFragment;
 import com.example.aylin.avukep.R;
 import com.example.aylin.avukep.User.First_Fragment;
 import com.example.aylin.avukep.User.UserInfoDatabaseHelper;
@@ -127,6 +128,14 @@ public class MainActivity extends AppCompatActivity {
                         fragmentTransaction31.replace(R.id.frame, buroAvukatFragment);
                         fragmentTransaction31.commit();
                         return true;
+                    case R.id.inteb:
+
+                        KepFragment kepFragment = new KepFragment();
+                        android.support.v4.app.FragmentTransaction fragmentTransactionkep = getSupportFragmentManager().beginTransaction();
+                        fragmentTransactionkep.replace(R.id.frame, kepFragment);
+                        fragmentTransactionkep.commit();
+                        return true;
+
 
                     case R.id.close:
                         drawerUsername.setText("Unknown Username");
