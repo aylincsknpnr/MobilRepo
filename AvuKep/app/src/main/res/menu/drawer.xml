@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/userm"
+            android:checked="false"
+            android:icon="@drawable/userimm"
+            android:title="Avukat Bilgileri" />
+        <item
+            android:id="@+id/burom"
+            android:checked="false"
+            android:icon="@drawable/buro"
+            android:title="Büro Bilgileri" />
+        <item
+            android:id="@+id/buravm"
+            android:checked="false"
+            android:icon="@drawable/avukatlar"
+            android:title="Büro Avukatları" />
+        <item
+            android:id="@+id/inteb"
+            android:checked="false"
+            android:icon="@drawable/ic_inbox_black"
+            android:title="Gelen Tebligat" />
+
+        <item
+            android:id="@+id/senteb"
+            android:checked="false"
+            android:icon="@drawable/ic_send_black"
+            android:title="Giden Tebligat" />
+
+        <item
+            android:id="@+id/close"
+            android:checked="false"
+            android:icon="@drawable/close"
+            android:title="Çıkış" />
+    </group>
+</menu>
