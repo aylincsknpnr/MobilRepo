@@ -6,7 +6,7 @@
             android:id="@+id/userm"
             android:checked="false"
             android:icon="@drawable/userimm"
-            android:title="Avukat Bilgileri" />
+            android:title="Avukat Bilgileri" ></item>
         <item
             android:id="@+id/burom"
             android:checked="false"
@@ -28,7 +28,26 @@
             android:checked="false"
             android:icon="@drawable/ic_send_black"
             android:title="Giden Tebligat" />
-
+        <item
+            android:id="@+id/okunmus"
+            android:checked="false"
+            android:icon="@drawable/ic_send_black"
+            android:title="Okunmus Tebligatlar" />
+        <item
+            android:id="@+id/cop"
+            android:checked="false"
+            android:icon="@drawable/ic_send_black"
+            android:title="Çöp Kutusu" />
+        <item
+            android:id="@+id/spam"
+            android:checked="false"
+            android:icon="@drawable/ic_send_black"
+            android:title="Spam" />
+        <item
+            android:id="@+id/hatirlat"
+            android:checked="false"
+            android:icon="@drawable/ic_send_black"
+            android:title="Hatırlatıcı" />
         <item
             android:id="@+id/close"
             android:checked="false"

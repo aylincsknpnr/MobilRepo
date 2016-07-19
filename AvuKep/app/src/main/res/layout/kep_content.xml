@@ -2,48 +2,79 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:tag="cards main container">
-        <TableLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/back"
-            android:stretchColumns="0,1,2"
-            >
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                >
+    >
 
-                <TextView
-                    android:id="@+id/gonderim"
-                    android:layout_width="wrap_content"
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="0,1,2"
+        >
+
+        <TableRow>
+            <ImageView
+                android:id="@+id/img"
+                android:src="@drawable/ank_baro"
+                android:layout_width="match_parent"
+                android:layout_gravity="left"
+                android:textColor="@color/black"
+                android:layout_height="match_parent"/>
+            <LinearLayout
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="a"
-                    android:textSize="6pt"
-                    android:background="@drawable/back"
-                    android:textAppearance="?android:attr/textAppearanceMedium"/>
-                <TextView
-                    android:id="@+id/gontarih"
-                    android:layout_width="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt"
+                        android:layout_width="150dp"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:textColor="@color/black"
+                        android:layout_height="20dp" />
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="20dp" />
+                    <TextView
+                        android:id="@+id/datetime1"
+                        android:layout_width="100dp"
+                        android:textSize="8pt"
+                        android:gravity="right"
+                        android:textColor="@color/black"
+                        android:layout_height="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="b"
-                    android:textSize="6pt"
-                    android:background="@drawable/back"
-                    android:textAppearance="?android:attr/textAppearanceMedium"/>
-                <TextView
-                    android:id="@+id/tebligtarih"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="c"
-                    android:textSize="6pt"
-                    android:background="@drawable/back"
-                    android:textAppearance="?android:attr/textAppearanceMedium"/>
-            </TableRow>
-        </TableLayout>
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/konu"
+                        android:layout_width="150dp"
+                        android:textSize="8pt"
+                        android:textColor="@color/black"
+                        android:layout_height="20dp"
+                        />
+                    <TextView
+                        android:id="@+id/datetime"
+                        android:layout_width="150dp"
+                        android:gravity="right"
+                        android:textSize="8pt"
+                        android:textColor="@color/black"
+                        android:layout_height="20dp"
+                        />
+                    <ImageView
+                        android:paddingLeft="20dp"
+                        android:src="@drawable/arrow_right_128"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
 
 </LinearLayout>

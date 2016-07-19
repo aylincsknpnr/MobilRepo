@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">dAV_a</string>
+    <string name="app_name">AvuKep</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -35,5 +35,14 @@
     <string name="select_camera">Select a Camera</string>
     <string name="ok_button">OK</string>
     <string name="cancel_button">Cancel</string>
+    <string name="txtBaslik">Alarm Başlığı</string>
+    <string name="txtAlarm">Alarm Notu</string>
+    <string name="btnTarih">Tarihi Ayarla</string>
+    <string name="btnSaat">Saati Ayarla</string>
+    <string name="btnAlarm">Alarmı Kur</string>
+    <string name="btnIptal">Iptal Et</string>
+    <string name="btnHatirlaticiEkle">Hatırlatıcı Ekle</string>
+    <string name="baslik">Not Baslığı %1$s</string>
+    <string name="not">Not: %1$s \nTarih: %2$s \nSaat: %3$s</string>
 </resources>
 

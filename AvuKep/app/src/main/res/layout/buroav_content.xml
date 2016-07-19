@@ -27,7 +27,7 @@
             android:id="@+id/imageView"
             android:layout_width="76dp"
             android:layout_height="76dp"
-            android:src="@color/sky"
+            android:src="@color/darkorrange"
             app:border_color="#FF000000"
             android:layout_marginLeft="24dp"
             android:layout_centerVertical="true"

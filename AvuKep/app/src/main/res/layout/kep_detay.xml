@@ -1,0 +1,238 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/toolbar1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:background="@color/darkorrange"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:layout_collapseMode="pin">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/back_button"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/arrow_left"
+            android:background="@color/darkorrange"
+            tools:ignore="RtlCompat" />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/homebut"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/ic_home_black"
+                android:background="@color/darkorrange"
+                tools:ignore="RtlCompat" />
+
+    </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+   <android.support.v7.widget.CardView
+        android:id="@+id/konucard"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:contentPadding="10dp">
+        <TableLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tablebaslik"
+        android:stretchColumns="0,1,2"
+        >
+        <TableRow>
+        <TextView
+            android:id="@+id/subjects"
+            android:layout_width="wrap_content"
+            android:textStyle="bold"
+            android:textSize="6pt"
+            android:layout_height="wrap_content" />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:background="@color/white"
+                tools:ignore="RtlCompat" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gelen Kutusu"
+            android:textSize="6pt"
+            android:textColor="@color/gray"/>
+        </TableRow>
+        </TableLayout>
+        </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/icerikk"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:contentPadding="10dp">
+<TableLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/tablelayout"
+    android:stretchColumns="0,1,2"
+   >
+    <TableRow>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:background="@drawable/ank_baro"/>
+        <TextView />
+        <TextView />
+    </TableRow>
+    <TableRow>
+       <TextView />
+        <TextView
+            android:text="Gönderen:"/>
+        <TextView android:id="@+id/gonderen"
+            android:layout_width="150dp"
+            android:layout_height="20dp"
+            />
+    </TableRow>
+<TableRow>
+    <TextView />
+    <TextView
+        android:text="Alıcı:"/>
+    <TextView android:id="@+id/alici"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        />
+</TableRow>
+    <TableRow>
+        <TextView />
+        <TextView
+            android:text="Tarih:"/>
+        <TextView android:id="@+id/detdate"
+            android:layout_width="150dp"
+            android:layout_height="20dp"
+            />
+    </TableRow>
+
+</TableLayout>
+</android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/mailtamami"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:contentPadding="10dp">
+
+        <TextView android:id="@+id/detdetay"
+            android:layout_width="150dp"
+            android:layout_height="20dp"
+            />
+        </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/butonlar"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:contentPadding="10dp">
+        <TableLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/butontable"
+            android:stretchColumns="0,1,2"
+            >
+        <TableRow>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/yanitla"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/answer"
+            android:background="@color/white"
+            tools:ignore="RtlCompat" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tumuyanitla"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/allcheck"
+            android:background="@color/white"
+            tools:ignore="RtlCompat" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/yonlendir"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/forward"
+            android:background="@color/white"
+            tools:ignore="RtlCompat" />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hatirclock"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/clock"
+                android:background="@color/white"
+                tools:ignore="RtlCompat" />
+       </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yanıtla"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tümünü Yanıtla"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yönlendir"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hatırlatıcı Ekle"/>
+                </TableRow>
+        </TableLayout>
+        </android.support.v7.widget.CardView>
+<FrameLayout
+android:id="@+id/frame2"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/bottom_container2"
+    android:layout_below="@id/title"
+    android:fillViewport="false"
+    android:orientation="vertical"
+    android:padding="10dp">
+</ScrollView>
+</FrameLayout>
+
+    </LinearLayout>

@@ -18,7 +18,12 @@ public class KepSoap {
         public static String [] k_gon;
         public static String [] k_gont;
         public static String [] k_tebt;
-        public final String SOAP_ACTION2 = "http://tempuri.org/Get_Avukat_KEP_Listesi";
+        public static String [] k_konu;
+        public static String [] k_saat;
+        public static String [] k_id;
+        public static String [] k_alici;
+
+    public final String SOAP_ACTION2 = "http://tempuri.org/Get_Avukat_KEP_Listesi";
 
         public  final String OPERATION_NAME2 = "Get_Avukat_KEP_Listesi";
 
@@ -60,20 +65,36 @@ public class KepSoap {
                     String [] gonArray=new String[primitive.getPropertyCount()+1];
                     String [] gontarihArray=new String[primitive.getPropertyCount()+1];
                     String [] tebtarihArray=new String[primitive.getPropertyCount()+1];
+                    String [] konuArray=new String[primitive.getPropertyCount()+1];
+                    String [] saatArray=new String[primitive.getPropertyCount()+1];
+                    String [] IdArray=new String[primitive.getPropertyCount()+1];
+                    String [] aliciArray=new String[primitive.getPropertyCount()+1];
 
                     for (int i = 0; i < NewDataSet.getPropertyCount(); i++) {
                         SoapObject info=(SoapObject)NewDataSet.getProperty(i);
-                        String gon=info.getProperty("kepFrom").toString();
-                        String gont=info.getProperty("kepSendDate").toString();
+                        String gon=info.getProperty("kepFrom").toString().substring(0,10);
+                        String gont=info.getProperty("kepSendDate").toString().substring(0,9);
                         String tebt=info.getProperty("kepReceivedDate").toString();
+                        String konu=info.getProperty("kepSubject").toString().substring(13, 40);
+                        String saat=info.getProperty("kepSendDate").toString().substring(9,15);
+                        String kid=info.getProperty("id").toString();
+                        String alici=info.getProperty("kepTo").toString().substring(0,10);
 
                         gonArray[i]=gon;
                         gontarihArray[i]=gont;
                         tebtarihArray[i]=tebt;
-                       
+                        konuArray[i]=konu;
+                        saatArray[i]=saat;
+                        IdArray[i]=kid;
+                        aliciArray[i]=alici;
+
                          k_gon=gonArray;
                         k_gont=gontarihArray;
                         k_tebt=tebtarihArray;
+                        k_konu=konuArray;
+                        k_saat=saatArray;
+                        k_id=IdArray;
+                        k_alici=aliciArray;
                         response=x;
                     }
                     response="x";
@@ -95,4 +116,9 @@ public class KepSoap {
     public String [] returnTebdate(){
         return k_tebt;
     }
+    public String [] returnKonu(){return k_konu;}
+    public String [] returnSaat(){return k_saat;}
+    public String [] returnKid(){return k_id;}
+    public String [] returnAlici(){return k_alici;}
+
     }

@@ -28,6 +28,30 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Kep.KepDetayActivity"
+            android:label="@string/app_name">
+
+        <intent-filter>
+            <action android:name="android.intent.action.SECOND" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+        </activity>
+        <activity
+            android:name=".Hatirlatici.takvimuygulamasi.HatirlaticiKur"
+            android:label="@string/app_name">
+
+            <intent-filter>
+                <action android:name="android.intent.action.SECOND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".Hatirlatici.takvimuygulamasi.MyBroadcastReceiver" />
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.VIBRATE"></uses-permission>
 </manifest>

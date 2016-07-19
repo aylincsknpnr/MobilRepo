@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.example.aylin.avukep.Buro.Buro_Fragment;
 import com.example.aylin.avukep.BuroAvukat.BuroAvukatFragment;
 
+import com.example.aylin.avukep.Hatirlatici.takvimuygulamasi.RemindFragment;
 import com.example.aylin.avukep.Kep.KepFragment;
 import com.example.aylin.avukep.R;
 import com.example.aylin.avukep.User.First_Fragment;
@@ -34,6 +35,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     //my add
+    public final static String TAG_FRAGMENT = "TAG_FRAGMENT";
     Button addButton, deleteButton;
     TextView tv;
     List<UserModel> list = new ArrayList<UserModel>();
@@ -135,7 +137,14 @@ public class MainActivity extends AppCompatActivity {
                         fragmentTransactionkep.replace(R.id.frame, kepFragment);
                         fragmentTransactionkep.commit();
                         return true;
+                    case R.id.hatirlat:
 
+                        RemindFragment remindFragment = new RemindFragment();
+                        android.support.v4.app.FragmentTransaction fragmentTransactionremind = getSupportFragmentManager().beginTransaction();
+                        fragmentTransactionremind.replace(R.id.frame, remindFragment,TAG_FRAGMENT);
+                        fragmentTransactionremind.addToBackStack(null);
+                        fragmentTransactionremind.commit();
+                        return true;
 
                     case R.id.close:
                         drawerUsername.setText("Unknown Username");
