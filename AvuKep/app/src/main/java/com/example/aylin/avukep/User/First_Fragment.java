@@ -12,8 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.aylin.avukep.Kep.KepAdapter;
 import com.example.aylin.avukep.Login.Caller;
 import com.example.aylin.avukep.Login.Third_Fragment;
 import com.example.aylin.avukep.R;
@@ -46,6 +48,7 @@ public class First_Fragment extends Fragment {
         info=(TextView) v.findViewById(R.id.info);
         uidb=new UserInfoDatabaseHelper(getActivity());
         profile=(ImageView)v.findViewById(R.id.imageView1);
+        final ListView list;
         KayitGoster();
 
         String listString = "";

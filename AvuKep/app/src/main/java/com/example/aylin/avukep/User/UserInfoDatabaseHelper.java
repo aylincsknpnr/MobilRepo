@@ -17,11 +17,11 @@ import java.util.List;
 public class UserInfoDatabaseHelper extends SQLiteOpenHelper {
 
     // Database Name
-    public static String DATABASE_NAME = "dava_users_databasem";
+    public static String DATABASE_NAME = "dava_users_database";
     // Current version of database
     private static final int DATABASE_VERSION = 1;
     // Name of table
-    private static final String TABLE = "davaUserInfom";
+    private static final String TABLE = "davaUserInfo";
     // All Keys used in table
     private static final String KEY_ID = "id";
     private static final String KEY_TC = "tc";

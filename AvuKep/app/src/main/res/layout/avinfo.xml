@@ -3,6 +3,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:background="@drawable/arkaplan"
     android:layout_height="match_parent">
     <LinearLayout
         android:orientation="vertical"
@@ -20,6 +21,7 @@
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
+            card_view:cardBackgroundColor="@android:color/transparent"
             card_view:cardCornerRadius="2dp"
             card_view:contentPadding="10dp">
             <ImageView
@@ -35,6 +37,7 @@
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
+            card_view:cardBackgroundColor="@android:color/transparent"
             card_view:cardCornerRadius="2dp"
             card_view:contentPadding="10dp">
         <TableLayout
@@ -59,6 +62,7 @@
             android:text="Avukat: "
             android:textStyle="bold"
             android:textSize="16sp"
+            android:textColor="@color/white"
             android:layout_marginTop="20dp"
 
             />
@@ -68,7 +72,9 @@
             android:text="a"
             android:id="@+id/ad"
             android:textSize="16sp"
+            android:textColor="@color/white"
             android:layout_marginTop="20dp"
+            android:textStyle="bold"
 
             />
 </TableRow>
@@ -81,6 +87,7 @@
             android:layout_height="wrap_content"
             android:text="TC: "
             android:textStyle="bold"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:layout_marginTop="20dp"
 
@@ -90,6 +97,8 @@
             android:layout_height="match_parent"
             android:text="t"
             android:id="@+id/tc"
+            android:textStyle="bold"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:layout_marginTop="20dp"
             />
@@ -102,6 +111,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sicil: "
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="16sp"
             android:layout_marginTop="20dp"
@@ -112,7 +122,9 @@
             android:layout_height="match_parent"
             android:text="s"
             android:id="@+id/sicil"
+            android:textStyle="bold"
             android:textSize="16sp"
+            android:textColor="@color/white"
             android:layout_marginTop="20dp"
             />
 </TableRow>
@@ -126,6 +138,7 @@
             android:text="Tel: "
             android:textStyle="bold"
             android:textSize="16sp"
+            android:textColor="@color/white"
             android:layout_marginTop="20dp"
 
             />
@@ -134,6 +147,8 @@
             android:layout_height="match_parent"
             android:text="t"
             android:id="@+id/tel"
+            android:textStyle="bold"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:layout_marginTop="20dp"
             />

@@ -27,6 +27,7 @@ import android.widget.Toast;
 import com.example.aylin.avukep.BuroAvukat.BuroAvAdapter;
 import com.example.aylin.avukep.BuroAvukat.BuroAvukatCaller;
 import com.example.aylin.avukep.Hatirlatici.dao.AlarmDAO;
+import com.example.aylin.avukep.Hatirlatici.takvimuygulamasi.HatirlaticiKur;
 import com.example.aylin.avukep.Login.DatabaseHelper;
 import com.example.aylin.avukep.Login.MainActivity;
 import com.example.aylin.avukep.R;
@@ -107,7 +108,6 @@ public class KepFragment extends android.support.v4.app.Fragment implements Clic
                 e.printStackTrace();
                 Toast.makeText(getActivity().getApplicationContext(), "Başarısız Giriş", Toast.LENGTH_SHORT).show();
             }
-
 
             return v;
         }

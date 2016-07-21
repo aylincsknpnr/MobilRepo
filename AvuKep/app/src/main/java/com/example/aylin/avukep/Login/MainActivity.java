@@ -1,17 +1,22 @@
 package com.example.aylin.avukep.Login;
 
+import android.app.ActionBar;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +25,7 @@ import android.widget.Toast;
 import com.example.aylin.avukep.Buro.Buro_Fragment;
 import com.example.aylin.avukep.BuroAvukat.BuroAvukatFragment;
 
+import com.example.aylin.avukep.Duyuru.DuyuruFragment;
 import com.example.aylin.avukep.Hatirlatici.takvimuygulamasi.RemindFragment;
 import com.example.aylin.avukep.Kep.KepFragment;
 import com.example.aylin.avukep.R;
@@ -83,9 +89,13 @@ public class MainActivity extends AppCompatActivity {
             drawerUsername.setText("Unknown Username");
             drawerAccount.setText("Unknown Info");
         }
+        DuyuruFragment duyuruFragment = new DuyuruFragment();
+        FragmentTransaction fragmentTransactionduyuru = getSupportFragmentManager().beginTransaction();
+        fragmentTransactionduyuru.replace(R.id.frame, duyuruFragment);
+        fragmentTransactionduyuru.commit();
         // Initializing Toolbar and setting it as the actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+       setSupportActionBar(toolbar);
 
         //Initializing NavigationView
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
@@ -111,14 +121,14 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.userm:
                         First_Fragment first_fragment = new First_Fragment();
-                        android.support.v4.app.FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
+                        FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction1.replace(R.id.frame, first_fragment);
                         fragmentTransaction1.commit();
                         return true;
 
                     case R.id.burom:
                         Buro_Fragment buro_fragment = new Buro_Fragment();
-                        android.support.v4.app.FragmentTransaction fragmentTransaction21 = getSupportFragmentManager().beginTransaction();
+                        FragmentTransaction fragmentTransaction21 = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction21.replace(R.id.frame, buro_fragment);
                         fragmentTransaction21.commit();
                         return true;
@@ -126,21 +136,21 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.buravm:
 
                         BuroAvukatFragment buroAvukatFragment = new BuroAvukatFragment();
-                        android.support.v4.app.FragmentTransaction fragmentTransaction31 = getSupportFragmentManager().beginTransaction();
+                        FragmentTransaction fragmentTransaction31 = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction31.replace(R.id.frame, buroAvukatFragment);
                         fragmentTransaction31.commit();
                         return true;
                     case R.id.inteb:
 
                         KepFragment kepFragment = new KepFragment();
-                        android.support.v4.app.FragmentTransaction fragmentTransactionkep = getSupportFragmentManager().beginTransaction();
+                        FragmentTransaction fragmentTransactionkep = getSupportFragmentManager().beginTransaction();
                         fragmentTransactionkep.replace(R.id.frame, kepFragment);
                         fragmentTransactionkep.commit();
                         return true;
                     case R.id.hatirlat:
 
                         RemindFragment remindFragment = new RemindFragment();
-                        android.support.v4.app.FragmentTransaction fragmentTransactionremind = getSupportFragmentManager().beginTransaction();
+                        FragmentTransaction fragmentTransactionremind = getSupportFragmentManager().beginTransaction();
                         fragmentTransactionremind.replace(R.id.frame, remindFragment,TAG_FRAGMENT);
                         fragmentTransactionremind.addToBackStack(null);
                         fragmentTransactionremind.commit();
@@ -207,10 +217,9 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.media_actions) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 

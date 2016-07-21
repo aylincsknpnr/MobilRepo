@@ -2,6 +2,7 @@ package com.example.aylin.avukep.Kep;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.aylin.avukep.Hatirlatici.takvimuygulamasi.HatirlaticiKur;
 import com.example.aylin.avukep.R;
 
 /**
@@ -33,6 +35,7 @@ public class KepAdapter extends ArrayAdapter<String> {
         this.dateTime=datetime;
         this.Konu=konu;
         this.dateTime1=datetime1;
+
     }
     @Override
     public View getView(int position, View view, ViewGroup parent) {
@@ -42,13 +45,20 @@ public class KepAdapter extends ArrayAdapter<String> {
         TextView datetime=(TextView)rowView.findViewById(R.id.datetime);
         TextView konu=(TextView)rowView.findViewById(R.id.konu);
         TextView datetime1=(TextView)rowView.findViewById(R.id.datetime1);
-
         ImageView imageView = (ImageView) rowView.findViewById(R.id.img);
+        ImageView imageviewii=(ImageView)rowView.findViewById(R.id.checkbutton);
         txtTitle.setText(web[position]);
         datetime.setText(dateTime[position]);
         konu.setText(Konu[position]);
         datetime1.setText(dateTime1[position]);
         imageView.setImageResource(imageId[position]);
+        HatirlaticiKur hk=new HatirlaticiKur();
+        if(position==position){
+            if(hk.pushDurum()=="1"){
+                imageviewii.setImageResource(R.drawable.allcheck);
+            }
+        }
+
         return rowView;
     }
 }

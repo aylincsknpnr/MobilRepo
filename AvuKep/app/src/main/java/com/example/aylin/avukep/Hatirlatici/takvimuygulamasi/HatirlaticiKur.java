@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.example.aylin.avukep.Hatirlatici.dao.AlarmDAO;
 import com.example.aylin.avukep.Hatirlatici.model.Alarm;
+import com.example.aylin.avukep.Kep.KepDetayActivity;
 import com.example.aylin.avukep.Kep.KepFragment;
 import com.example.aylin.avukep.R;
 
@@ -34,6 +35,7 @@ public class HatirlaticiKur extends AppCompatActivity {
     private int yil,ay,gun,saat,dakika;
     public static int sayac = 0;
     public static String baslik,not;
+    public static String check;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,8 +79,7 @@ public class HatirlaticiKur extends AppCompatActivity {
                 ftrem.replace(R.id.frameha, remindFragment);
                 ftrem.commit();
                // final RemindFragment fragment2 = (RemindFragment) getSupportFragmentManager().findFragmentByTag(TAG_FRAGMENT);
-
-
+                check="1";
             }
 
         });
@@ -147,6 +148,14 @@ public class HatirlaticiKur extends AppCompatActivity {
     }
 
     public void hatirlaticiyiKur(View view){
+        boolean alarmUp = (PendingIntent.getBroadcast(getApplicationContext(), 0,
+                new Intent(this, MyBroadcastReceiver.class),
+                PendingIntent.FLAG_NO_CREATE) != null);
+
+        if (alarmUp)
+        {
+            System.out.println( "Alarm is already active");
+        }
         intent = getIntent();
         baslik =  intent.getStringExtra("baslik2");
         not=intent.getStringExtra("not2");
@@ -183,5 +192,8 @@ public class HatirlaticiKur extends AppCompatActivity {
         alarm.setAlarmDakika(dakika);
         db.onInsert(alarm);
 
+    }
+    public String pushDurum(){
+        return check;
     }
 }
