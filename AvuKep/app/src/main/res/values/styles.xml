@@ -44,4 +44,9 @@
      <item name="android:color">@color/black</item>
         <!-- text size in menu-->
     </style>
+    <style name="AppTheme.Dark.Dialog" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:background">@color/primary</item>
+    </style>
 </resources>

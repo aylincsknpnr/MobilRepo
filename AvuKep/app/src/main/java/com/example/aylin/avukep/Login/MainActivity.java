@@ -22,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.aylin.avukep.Anasayfa.AnaFragment;
 import com.example.aylin.avukep.Buro.Buro_Fragment;
 import com.example.aylin.avukep.BuroAvukat.BuroAvukatFragment;
 
@@ -89,10 +90,10 @@ public class MainActivity extends AppCompatActivity {
             drawerUsername.setText("Unknown Username");
             drawerAccount.setText("Unknown Info");
         }
-        DuyuruFragment duyuruFragment = new DuyuruFragment();
-        FragmentTransaction fragmentTransactionduyuru = getSupportFragmentManager().beginTransaction();
-        fragmentTransactionduyuru.replace(R.id.frame, duyuruFragment);
-        fragmentTransactionduyuru.commit();
+        AnaFragment anaFragment = new AnaFragment();
+        FragmentTransaction fragmentTransactionana = getSupportFragmentManager().beginTransaction();
+        fragmentTransactionana.replace(R.id.frame, anaFragment);
+        fragmentTransactionana.commit();
         // Initializing Toolbar and setting it as the actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
        setSupportActionBar(toolbar);

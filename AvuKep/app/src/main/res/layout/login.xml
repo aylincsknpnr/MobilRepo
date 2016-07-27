@@ -1,134 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:background="@drawable/loginback"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_horizontal_margin"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true">
     <android.support.v7.widget.CardView
-        android:id="@+id/card1"
-        android:layout_gravity="center"
-        android:layout_width="fill_parent"
-        android:layout_height="150dp"
-        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        card_view:cardBackgroundColor="@color/softgray"
         card_view:cardCornerRadius="2dp"
         card_view:contentPadding="10dp">
-        <TableLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:stretchColumns="0,1"
-            >
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-        <ImageView
-            android:id="@+id/logoImage"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="56dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp">
+
+        <ImageView android:src="@drawable/barologo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:src="@drawable/ank_baro"
-            android:layout_gravity="center"
-           />
-        </TableRow>
-        >
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_marginBottom="24dp"
+            android:layout_gravity="center_horizontal" />
+
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="-2dp"
             android:padding="5dp"
-            android:text="Ankara Barosu Kep Uygulaması"
-            android:textColor="@color/darkorrange"
+            android:text="Ankara Barosu AvuKep Uygulaması"
             android:layout_gravity="center"
+            android:textStyle="bold"
             android:gravity="center"
             />
-        </TableRow>
-        </TableLayout>
+
+        <!--  Email Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/un"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Kullanıcı Adı" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!--  Password Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/pw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="Parola"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/add"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:textColor="@color/softgray"
+            android:padding="12dp"
+            android:background="@drawable/button"
+            android:text="Giriş"/>
+
+        <TextView android:id="@+id/link_signup"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="No account yet? Create one"
+            android:gravity="center"
+            android:textSize="16dip"/>
+
+    </LinearLayout>
     </android.support.v7.widget.CardView>
-    <android.support.v7.widget.CardView
-        android:id="@+id/card2"
-        android:layout_gravity="center"
-        android:layout_width="fill_parent"
-        android:layout_height="150dp"
-        android:layout_margin="5dp"
-        card_view:cardCornerRadius="2dp"
-        card_view:contentPadding="10dp">
-        <TableLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:stretchColumns="0,1"
-            >
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            >
-            <ImageView
-                android:id="@+id/useımage"
-                android:layout_width="20dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/username"
-               />
-
-        <EditText
-            android:id="@+id/un"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-2dp"
-            android:padding="10dp"
-            android:hint="Kullanıcı Adı Giriniz"
-            android:textColorHint="@color/darkorrange"
-            ></EditText>
-</TableRow>
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            >
-            <ImageView
-                android:id="@+id/passımage"
-                android:layout_width="20dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/kilit"
-                />
-        <EditText
-            android:id="@+id/pw"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-2dp"
-            android:padding="10dp"
-            android:hint="Parola Giriniz"
-            android:textColorHint="@color/darkorrange"
-            android:password="true"></EditText>
-</TableRow>
-
-        </TableLayout>
-</android.support.v7.widget.CardView>
-    <android.support.v7.widget.CardView
-        android:id="@+id/card3"
-        android:layout_gravity="center"
-        android:layout_width="fill_parent"
-        android:layout_height="100dp"
-        android:layout_margin="5dp"
-        android:paddingTop="20dp"
-        card_view:cardCornerRadius="2dp"
-        card_view:contentPadding="10dp">
-    <Button
-        android:id="@+id/add"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:layout_margin="4dp"
-        android:background="@color/darkorrange"
-        android:text="GİRİŞ"
-        android:layout_span="2" />
-</android.support.v7.widget.CardView>
-</LinearLayout>
+</ScrollView>

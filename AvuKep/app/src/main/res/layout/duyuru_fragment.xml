@@ -27,7 +27,7 @@
                 android:text="Duyuru"
                 android:textSize="8pt"
                 android:textColor="@color/white"
-                android:background="@drawable/button"
+                android:background="@color/bluegray"
                 android:layout_weight="1" />
 
             <Button
