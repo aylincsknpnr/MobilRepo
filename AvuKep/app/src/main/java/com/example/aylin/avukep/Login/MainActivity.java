@@ -86,18 +86,19 @@ public class MainActivity extends AppCompatActivity {
             drawerAccount.setText(result[3]);
 
             Picasso.with(this).load("http://dmzws.barokart.com.tr/dmz.xml.info/TBB2Image.ashx?id=6&baroid="+result[3].replace(" ", "")+"&t=1").into(profile);
+
         } else {//giriş yapmamış ise login sayfasına yönlenecek
             drawerUsername.setText("Unknown Username");
             drawerAccount.setText("Unknown Info");
         }
+
+        // Initializing Toolbar and setting it as the actionbar
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+       setSupportActionBar(toolbar);
         AnaFragment anaFragment = new AnaFragment();
         FragmentTransaction fragmentTransactionana = getSupportFragmentManager().beginTransaction();
         fragmentTransactionana.replace(R.id.frame, anaFragment);
         fragmentTransactionana.commit();
-        // Initializing Toolbar and setting it as the actionbar
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-       setSupportActionBar(toolbar);
-
         //Initializing NavigationView
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
         // View headerView = navigationView.inflateHeaderView(R.layout.header);

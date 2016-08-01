@@ -7,6 +7,9 @@ android {
         maven {
             url 'http://dl.bintray.com/amulyakhare/maven'
         }
+        maven {
+                    url "https://jitpack.io"
+        }
     }
     defaultConfig {
         applicationId "com.example.aylin.avukep"
@@ -37,4 +40,5 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'me.dm7.barcodescanner:zxing:1.8.4'
     compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+    compile 'com.github.jonisaa:MaterialCalendarview:v1.2.2'
 }
