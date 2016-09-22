@@ -52,11 +52,7 @@ public class KepFragment extends android.support.v4.app.Fragment implements Clic
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             View v = inflater.inflate(R.layout.kep_fragment, container, false);
             final ListView list;
-            Integer[] imageId = {
-                    R.drawable.ank_baro,
-                    R.drawable.ank_baro,
-                    R.drawable.ank_baro,
-            };
+
             kes=new KepSoap();
             try {
                 try {
@@ -82,7 +78,7 @@ public class KepFragment extends android.support.v4.app.Fragment implements Clic
                     part8=kes.returnAlici();
 
                     KepAdapter adapter = new
-                            KepAdapter(getActivity(), part1, imageId,part2,part4,part5);
+                            KepAdapter(getActivity(), part1,part2,part4,part5);
                     list=(ListView)v.findViewById(R.id.list);
                     list.setAdapter(adapter);
 

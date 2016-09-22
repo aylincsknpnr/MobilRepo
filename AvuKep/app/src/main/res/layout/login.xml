@@ -24,23 +24,32 @@
         android:paddingLeft="24dp"
         android:paddingRight="24dp">
 
-        <ImageView android:src="@drawable/barologo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:layout_gravity="center_horizontal" />
+                <ImageView android:src="@drawable/logobaro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:layout_gravity="left"
+                   />
 
-        <TextView
+                <ImageView android:src="@drawable/avukeplogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:layout_gravity="center"
+                    />
+
+
+      <!--  <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="-2dp"
             android:padding="5dp"
-            android:text="Ankara Barosu AvuKep Uygulaması"
+            android:text="Avukatlar İçin Kayıtlı Elektronik Posta (KEP) Uygulaması"
             android:layout_gravity="center"
             android:textStyle="bold"
             android:gravity="center"
-            />
+            />-->
 
         <!--  Email Label -->
         <android.support.design.widget.TextInputLayout
@@ -75,15 +84,17 @@
             android:layout_marginBottom="24dp"
             android:textColor="@color/softgray"
             android:padding="12dp"
-            android:background="@drawable/button"
+            android:background="@drawable/but2"
             android:text="Giriş"/>
 
         <TextView android:id="@+id/link_signup"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:text="No account yet? Create one"
+            android:text="Kayıtlı hesabınız yoksa tıklayınız"
             android:gravity="center"
+            android:autoLink="web"
+            android:textColor="@color/darkbluegray"
             android:textSize="16dip"/>
 
     </LinearLayout>

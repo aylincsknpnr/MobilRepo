@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +27,8 @@ public class DuyuruFragment extends Fragment implements ClickListener {
     String[] part3;
     Boolean check=false;
     public TextView detay;
-    Button detail,duyuru,haber;
+    Button detail;
+    ImageButton duyuru,haber;
     public static String rslt = "";
     private static DuyuruAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -36,8 +38,8 @@ public class DuyuruFragment extends Fragment implements ClickListener {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             View v = inflater.inflate(R.layout.duyuru_fragment, container, false);
-            duyuru=(Button)v.findViewById(R.id.duyuru);
-            haber=(Button)v.findViewById(R.id.haber);
+            duyuru=(ImageButton)v.findViewById(R.id.duyuru);
+            haber=(ImageButton)v.findViewById(R.id.haber);
             duyuru.setOnClickListener(new View.OnClickListener() {
 
                 @Override

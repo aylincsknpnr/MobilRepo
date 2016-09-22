@@ -27,7 +27,7 @@
             android:id="@+id/adsoyad"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="@color/darkbluegray"
             android:layout_marginTop="10dp"
             android:text=""
             android:textSize="6pt"
@@ -39,6 +39,7 @@
             android:layout_marginTop="10dp"
             android:text=""
             android:textSize="6pt"
+            android:textColor="@color/darkbluegray"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
     </TableRow>
 </TableLayout>

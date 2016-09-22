@@ -2,16 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/transparent"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     >
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="0dp"
+        card_view:cardBackgroundColor="@android:color/transparent"
+        card_view:contentPadding="10dp"
+        >
     <android.support.v7.widget.CardView
         android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        card_view:cardBackgroundColor="@android:color/transparent"
-        card_view:cardCornerRadius="2dp"
+        card_view:cardCornerRadius="0dp"
+        card_view:cardBackgroundColor="@color/softgray"
         card_view:contentPadding="10dp">
         <TableLayout
             android:layout_width="match_parent"
@@ -31,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:text="tarih"
                     android:paddingTop="10dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/darkbluegray"
                     android:textStyle="bold"
                     android:textSize="8pt"
                     android:gravity="left"
@@ -57,7 +65,7 @@
                 android:gravity="center"
                 android:textStyle="bold"
                 android:textSize="8pt"
-                android:textColor="@color/white"
+                android:textColor="@color/darkbluegray"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_span="7" />
 
@@ -77,6 +85,7 @@
                 />
 
         </TableLayout>
+        </android.support.v7.widget.CardView>
     </android.support.v7.widget.CardView>
     <TextView
         android:id="@+id/h_detay"
@@ -85,9 +94,9 @@
         android:layout_marginTop="10dp"
         android:paddingBottom="10dp"
         android:textSize="8pt"
-        android:textColor="@color/white"
+        android:textColor="@color/bluegray"
+        android:background="@color/softgray"
         android:textStyle="bold"
-        android:background="@drawable/back"
         android:textAppearance="?android:attr/textAppearanceMedium"/>
 
 </LinearLayout>

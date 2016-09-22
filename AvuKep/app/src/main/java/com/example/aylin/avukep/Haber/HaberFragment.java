@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +27,8 @@ public class HaberFragment extends Fragment implements ClickListener {
     String[] part3;
     Boolean check=false;
     public TextView detay;
-    Button detail,duyuru,haber;
+    Button detail;
+    ImageButton duyuru,haber;
     public static String rslt = "";
     private static HaberAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -42,8 +44,8 @@ public class HaberFragment extends Fragment implements ClickListener {
             recyclerView.setLayoutManager(layoutManager);
             recyclerView.setItemAnimator(new DefaultItemAnimator());
             ds=new HaberSoap();
-            duyuru=(Button)v.findViewById(R.id.duyuru);
-            haber=(Button)v.findViewById(R.id.haber);
+            duyuru=(ImageButton)v.findViewById(R.id.duyuru);
+            haber=(ImageButton)v.findViewById(R.id.haber);
             duyuru.setOnClickListener(new View.OnClickListener() {
 
                 @Override

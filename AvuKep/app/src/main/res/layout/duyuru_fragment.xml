@@ -7,49 +7,56 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Login.MainActivity"
-    android:background="@drawable/arkaplan"
+    android:background="@color/softgray"
     android:orientation="vertical">
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:stretchColumns="0,1"
         >
-        <LinearLayout
 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:orientation="horizontal" >
-
-            <Button
+            <TableRow>
+           <ImageButton
                 android:id="@+id/duyuru"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Duyuru"
-                android:textSize="8pt"
-                android:textColor="@color/white"
-                android:background="@color/bluegray"
-                android:layout_weight="1" />
+                android:src="@drawable/duyuru"/>
+
+            <ImageButton
+                android:id="@+id/haber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/haber"/>
+                <!--<Button
+                    android:id="@+id/duyuru"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Duyuru"
+                    android:textSize="8pt"
+                    android:textColor="@color/white"
+                    android:background="@drawable/button"
+                    android:layout_weight="1" />
 
             <Button
-                android:id="@+id/haber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Haber"
-                android:textSize="8pt"
-                android:textColor="@color/white"
-                android:background="@drawable/button"
-                android:layout_marginLeft="8dp"
-                android:layout_weight="1" />
-        </LinearLayout>
+                    android:id="@+id/haber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Haber"
+                    android:textSize="8pt"
+                    android:textColor="@color/white"
+                    android:background="@drawable/button"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1" />-->
 
-    </TableLayout>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/duyuru_recycler_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scrollbars="vertical"
-        android:clickable="true"
-        android:focusable="true"
-        />
+                </TableRow>
+        </TableLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/duyuru_recycler_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:clickable="true"
+            android:focusable="true"
+            />
 
-</LinearLayout>
+    </LinearLayout>

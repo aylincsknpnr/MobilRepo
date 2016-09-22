@@ -157,7 +157,11 @@ public class MainActivity extends AppCompatActivity {
                         fragmentTransactionremind.addToBackStack(null);
                         fragmentTransactionremind.commit();
                         return true;
-
+                    case R.id.duyhab:
+                        DuyuruFragment duyuruFragment=new DuyuruFragment();
+                        FragmentTransaction frduy=getSupportFragmentManager().beginTransaction();
+                        frduy.replace(R.id.frame,duyuruFragment);
+                        frduy.commit();
                     case R.id.close:
                         drawerUsername.setText("Unknown Username");
                         drawerAccount.setText("Unknown Info");

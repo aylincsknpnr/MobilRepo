@@ -49,6 +49,11 @@
             android:icon="@drawable/ic_send_black"
             android:title="Hatırlatıcı" />
         <item
+            android:id="@+id/duyhab"
+            android:checked="false"
+            android:icon="@drawable/ic_send_black"
+            android:title="Duyuru/Haber" />
+        <item
             android:id="@+id/close"
             android:checked="false"
             android:icon="@drawable/close"

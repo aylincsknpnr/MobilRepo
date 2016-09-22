@@ -75,7 +75,7 @@ public class KepSoap {
                         String gon=info.getProperty("kepFrom").toString().substring(0,10);
                         String gont=info.getProperty("kepSendDate").toString().substring(0,9);
                         String tebt=info.getProperty("kepReceivedDate").toString();
-                        String konu=info.getProperty("kepSubject").toString().substring(13, 40);
+                        String konu=info.getProperty("kepSubject").toString().substring(13, 32);
                         String saat=info.getProperty("kepSendDate").toString().substring(9,15);
                         String kid=info.getProperty("id").toString();
                         String alici=info.getProperty("kepTo").toString().substring(0,10);
