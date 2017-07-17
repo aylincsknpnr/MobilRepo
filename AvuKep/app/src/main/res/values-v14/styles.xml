@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <style name="NavigationDrawerStyle">
-       <item name="android:color">@color/black</item>
-        <!-- item size in menu-->
-    </style>
-</resources>
